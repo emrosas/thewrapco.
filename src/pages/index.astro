@@ -1,0 +1,119 @@
+---
+//Component imports
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+
+//Asset imports
+import heroBg from '../images/home/hero-bg.png'
+---
+
+<Layout title="The Wrap Co.">
+	<main>
+
+		<!-- Hero section -->
+		<section id="hero"  class=" p-10 min-h-screen w-full relative flex flex-col md:items-center justify-center">
+
+			<!-- Title and subtitle -->
+			<div id="hero-comp" class="flex flex-col items-start md:items-center mb-10 md:mb-20">
+				<p class="text-sm md:text-2xl font-light uppercase tracking-extrawide md:tracking-superwide mb-4">Próximamente</p>
+				<h1 class="text-9xl md:text-10xl mb-2">The WrAp Co.</h1>
+				<div class=" bg-orange py-1 px-4 rounded-md">
+					<p class="text-4xl font-light">& Coffee</p>
+				</div>
+			</div>
+
+			<!-- Contact information -->
+			<ul id="hero-info" class="flex flex-wrap md:items-center md:justify-center gap-10 max-w-4xl">
+				<!-- Contact info #1 -->
+				<li>
+					<a href="https://maps.app.goo.gl/byUbJ1XaYhwHDDEH9" class="flex items-center gap-4">
+						<div  class="bg-orange p-2 rounded-full">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 21 21" fill="none">
+								<mask id="mask0_245_21267" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="21">
+									<rect x="0.5" y="0.5" width="20" height="20" fill="#D9D9D9"/>
+								</mask>
+								<g mask="url(#mask0_245_21267)">
+									<path d="M10.5 10.5C10.9583 10.5 11.3507 10.3368 11.6771 10.0104C12.0035 9.68403 12.1666 9.29167 12.1666 8.83333C12.1666 8.375 12.0035 7.98264 11.6771 7.65625C11.3507 7.32986 10.9583 7.16667 10.5 7.16667C10.0416 7.16667 9.64929 7.32986 9.3229 7.65625C8.99651 7.98264 8.83331 8.375 8.83331 8.83333C8.83331 9.29167 8.99651 9.68403 9.3229 10.0104C9.64929 10.3368 10.0416 10.5 10.5 10.5ZM10.5 18.8333C8.26387 16.9306 6.59373 15.1632 5.48956 13.5313C4.3854 11.8993 3.83331 10.3889 3.83331 9C3.83331 6.91667 4.50345 5.25694 5.84373 4.02083C7.18401 2.78472 8.73609 2.16667 10.5 2.16667C10.7778 2.16667 11.0555 2.18403 11.3333 2.21875C11.6111 2.25347 11.8889 2.30556 12.1666 2.375V5.5H14.6666V8H17.1041C17.1319 8.15278 17.1493 8.31597 17.1562 8.48958C17.1632 8.6632 17.1666 8.83333 17.1666 9C17.1666 10.3889 16.6146 11.8993 15.5104 13.5313C14.4062 15.1632 12.7361 16.9306 10.5 18.8333ZM15.5 7.16667V4.66667H13V3H15.5V0.5H17.1666V3H19.6666V4.66667H17.1666V7.16667H15.5Z" fill="#FBFBF9"/>
+								</g>
+							</svg>
+						</div>
+						<p class="font-light">Rio Mississippi 129 A, Colonia del Valle, San Pedro Garza García, 66220.</p>
+					</a>
+				</li>
+
+				<!-- Contact info #2 -->
+				<li>
+					<a href="/" class="flex items-center gap-4">
+						<div  class="bg-orange p-2 rounded-full">
+							<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+								<mask id="mask0_245_21273" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="21">
+									<rect x="0.5" y="0.5" width="20" height="20" fill="#D9D9D9"/>
+								</mask>
+								<g mask="url(#mask0_245_21273)">
+									<path d="M17.125 18C15.3889 18 13.6736 17.6215 11.9792 16.8646C10.2847 16.1076 8.74306 15.0347 7.35417 13.6458C5.96528 12.2569 4.89236 10.7153 4.13542 9.02083C3.37847 7.32639 3 5.61111 3 3.875C3 3.625 3.08333 3.41667 3.25 3.25C3.41667 3.08333 3.625 3 3.875 3H7.25C7.44444 3 7.61806 3.06597 7.77083 3.19792C7.92361 3.32986 8.01389 3.48611 8.04167 3.66667L8.58333 6.58333C8.61111 6.80556 8.60417 6.99306 8.5625 7.14583C8.52083 7.29861 8.44444 7.43056 8.33333 7.54167L6.3125 9.58333C6.59028 10.0972 6.92014 10.5937 7.30208 11.0729C7.68403 11.5521 8.10417 12.0139 8.5625 12.4583C8.99306 12.8889 9.44444 13.2882 9.91667 13.6563C10.3889 14.0243 10.8889 14.3611 11.4167 14.6667L13.375 12.7083C13.5 12.5833 13.6632 12.4896 13.8646 12.4271C14.066 12.3646 14.2639 12.3472 14.4583 12.375L17.3333 12.9583C17.5278 13.0139 17.6875 13.1146 17.8125 13.2604C17.9375 13.4062 18 13.5694 18 13.75V17.125C18 17.375 17.9167 17.5833 17.75 17.75C17.5833 17.9167 17.375 18 17.125 18Z" fill="#FBFBF9"/>
+								</g>
+							</svg>
+						</div>
+						<p class="font-light">961 251 3578</p>
+					</a>
+				</li>
+
+				<!-- Contact info #3 -->
+				<li>
+					<a href="https://www.instagram.com/thewrapco._/" class="flex items-center gap-4">
+						<div  class="bg-orange p-2 rounded-full">
+							<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+								<path d="M7.16536 2.5C4.5927 2.5 2.5 4.59464 2.5 7.16797V13.8346C2.5 16.4073 4.59464 18.5 7.16797 18.5H13.8346C16.4073 18.5 18.5 16.4054 18.5 13.832V7.16536C18.5 4.5927 16.4054 2.5 13.832 2.5H7.16536ZM15.1667 5.16667C15.5347 5.16667 15.8333 5.46533 15.8333 5.83333C15.8333 6.20133 15.5347 6.5 15.1667 6.5C14.7987 6.5 14.5 6.20133 14.5 5.83333C14.5 5.46533 14.7987 5.16667 15.1667 5.16667ZM10.5 6.5C12.706 6.5 14.5 8.294 14.5 10.5C14.5 12.706 12.706 14.5 10.5 14.5C8.294 14.5 6.5 12.706 6.5 10.5C6.5 8.294 8.294 6.5 10.5 6.5ZM10.5 7.83333C9.79276 7.83333 9.11448 8.11428 8.61438 8.61438C8.11428 9.11448 7.83333 9.79276 7.83333 10.5C7.83333 11.2072 8.11428 11.8855 8.61438 12.3856C9.11448 12.8857 9.79276 13.1667 10.5 13.1667C11.2072 13.1667 11.8855 12.8857 12.3856 12.3856C12.8857 11.8855 13.1667 11.2072 13.1667 10.5C13.1667 9.79276 12.8857 9.11448 12.3856 8.61438C11.8855 8.11428 11.2072 7.83333 10.5 7.83333Z" fill="#FBFBF9"/>
+							</svg>
+						</div>
+						<p class="font-light">@thewrapco._</p>
+					</a>
+				</li>
+
+				<!-- Contact info #4 -->
+				<li>
+					<a href="https://www.facebook.com/thewrapco.restaurant" class="flex items-center gap-4">
+						<div  class="bg-orange p-2 rounded-full">
+							<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+								<path d="M10.5 2.5C6.082 2.5 2.5 6.082 2.5 10.5C2.5 14.5107 5.45467 17.8227 9.304 18.4013V12.62H7.32467V10.5173H9.304V9.118C9.304 6.80133 10.4327 5.78467 12.358 5.78467C13.28 5.78467 13.768 5.85333 13.9987 5.884V7.71933H12.6853C11.868 7.71933 11.5827 8.49467 11.5827 9.368V10.5173H13.978L13.6533 12.62H11.5827V18.418C15.4873 17.8887 18.5 14.55 18.5 10.5C18.5 6.082 14.918 2.5 10.5 2.5Z" fill="#FBFBF9"/>
+							</svg>
+						</div>
+						<p class="font-light">The Wrap Co.</p>
+					</a>
+				</li>
+			</ul>
+			<!-- <Image
+				src={heroBg},
+				alt={'A cozy restaurant'},
+				fit={cover},
+				width={'100%'},
+				height={'100%'},
+				class:list={[
+					'absolute',
+					'inset-0',
+					'object-cover',
+					'-z-10',
+					'opacity-10',
+				]}
+			/> -->
+		</section>
+	</main>
+</Layout>
+
+<style>
+	#hero::before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.1;
+		background-image: url("../images/home/hero-bg.png");
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		background-size: cover;
+		z-index: -1;
+	}
+</style>
