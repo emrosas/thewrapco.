@@ -5,6 +5,7 @@ interface Props {
 
 const { title } = Astro.props
 import '@fontsource/poppins'
+import Navbar from '../components/Navbar.astro'
 ---
 
 <!doctype html>
@@ -18,16 +19,13 @@ import '@fontsource/poppins'
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-light-1 text-dark-1">
+	<body class="font-body bg-light-1 text-dark-1">
+		<Navbar />
 		<slot />
 	</body>
 </html>
 
 <style is:global>
-	body {
-		font-family: 'Poppins', sans-serif;
-	}
-
 	h1 {
 		font-family: 'Tanker', sans-serif;
 	}

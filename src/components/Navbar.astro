@@ -1,0 +1,85 @@
+---
+// Component Import
+import { Image } from 'astro:assets'
+// Image Imports
+import logo from '../assets/navbar/logo-horizontal.svg'
+import andCoffee from '../assets/navbar/and-coffee.svg'
+// Social Media Icons
+import instagram from '../assets/navbar/instagram.svg'
+import facebook from '../assets/navbar/facebook.svg'
+import tiktok from '../assets/navbar/tiktok.svg'
+const unactiveLink =
+	'decoration-brand-2 underline-offset-4 opacity-80 hover:underline hover:opacity-100'
+const activeLink = 'decoration-brand-2 underline-offset-4 opacity-100 underline'
+---
+
+<script>
+	window.onload = () => {
+		const links = document.querySelectorAll('a')
+		links.forEach((link) => {
+			if (link.href === window.location.href) {
+				link.classList.add('underline')
+				link.classList.add('opacity-100')
+			}
+		})
+	}
+</script>
+
+<div id="nav-container" class="px-page pt-4">
+	<nav class="grid grid-cols-3 justify-between rounded-full bg-dark-2 px-page py-4">
+		<ul class="flex items-center gap-6 text-light-1">
+			<li>
+				<a
+					href="/"
+					aria-current=""
+					class="decoration-brand-2 underline-offset-4 opacity-80 hover:underline hover:opacity-100"
+					>Inicio</a
+				>
+			</li>
+			<li>
+				<a href="/menu/wraps" aria-current="" class={unactiveLink}>Comida</a>
+			</li>
+			<li>
+				<a
+					href="/menú/bebidas"
+					aria-current=""
+					class="decoration-brand-2 underline-offset-4 opacity-80 hover:underline hover:opacity-100"
+					>Bebidas</a
+				>
+			</li>
+		</ul>
+		<a class="relative flex justify-center">
+			<Image src={logo} alt="Company Logo" />
+			<Image src={andCoffee} alt="Company Slogan" class={'absolute -bottom-6'} />
+		</a>
+		<ul class="flex items-center justify-end gap-4">
+			<li
+				class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
+			>
+				<a
+					href="/"
+					class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
+					><Image src={instagram} alt="Social Media Icon" width={20} height={20} /></a
+				>
+			</li>
+			<li
+				class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
+			>
+				<a
+					href="/"
+					class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
+					><Image src={facebook} alt="Social Media Icon" width={20} height={20} /></a
+				>
+			</li>
+			<li
+				class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
+			>
+				<a
+					href="/"
+					class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
+					><Image src={tiktok} alt="Social Media Icon" width={20} height={20} /></a
+				>
+			</li>
+		</ul>
+	</nav>
+</div>
