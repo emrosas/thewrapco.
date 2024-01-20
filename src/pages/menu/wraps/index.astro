@@ -12,11 +12,13 @@ import wrapsData from './_wrapsData.json'
 
 <Layout title="Wraps">
 	<main>
-		<header class="flex items-center justify-between px-page py-12">
+		<header
+			class="flex flex-col justify-between gap-8 px-page-mobile py-12 sm:flex-row sm:items-center md:px-page-tablet lg:px-page"
+		>
 			<!-- Section title -->
 			<div class="flex items-center gap-4">
 				<h1 class="text-8xl">Wraps</h1>
-				<Image src={wrap} alt="Wrap Icon" />
+				<Image src={wrap} alt="Wrap Icon" class={'w-20'} />
 			</div>
 			<!-- Icon explanations -->
 			<ul class="flex flex-col gap-4">
@@ -28,27 +30,27 @@ import wrapsData from './_wrapsData.json'
 				</li>
 			</ul>
 		</header>
-		<section class="grid grid-cols-2 gap-12 px-page py-12">
+		<section class="grid gap-12 px-page-mobile py-12 md:grid-cols-2 md:px-page-tablet lg:px-page">
 			<!-- Maps the items from the data object -->
 			{
 				Object.keys(wrapsData).map((wrap) => {
 					return (
-						<div class="flex items-center justify-center gap-6">
+						<div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
 							<img
 								src={wrapsData[wrap].image.src}
 								alt={wrapsData[wrap].image.alt}
-								class=" w-48 rounded-lg"
+								class="w-full rounded-lg sm:w-48"
 							/>
 							<div class="flex flex-col gap-2">
 								<div class="flex items-center justify-between">
 									<div class="flex gap-2">
-										<h3 class="text-3xl font-semibold">{wrapsData[wrap].name}</h3>
+										<h3 class="text-2xl font-semibold lg:text-3xl">{wrapsData[wrap].name}</h3>
 										{wrapsData[wrap].spicy && <Image src={flame} alt="Flame Icon" />}
 										{wrapsData[wrap].morning && <Image src={sun} alt="Sun Icon" />}
 									</div>
-									<h4 class="text-3xl font-semibold">${wrapsData[wrap].price}</h4>
+									<h4 class="text-xl font-semibold lg:text-3xl">${wrapsData[wrap].price}</h4>
 								</div>
-								<p class=" text-xl font-light">{wrapsData[wrap].description}</p>
+								<p class="text-md font-light lg:text-lg">{wrapsData[wrap].description}</p>
 							</div>
 						</div>
 					)

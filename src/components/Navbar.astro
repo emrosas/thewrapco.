@@ -24,9 +24,11 @@ const unactiveLink =
 	}
 </script>
 
-<div id="nav-container" class="px-page pt-4">
-	<nav class="grid grid-cols-3 justify-between rounded-full bg-dark-2 px-page py-4">
-		<ul class="flex items-center gap-6 text-light-1">
+<div id="nav-container" class="sticky top-0 px-page-mobile pt-4 md:px-page-tablet lg:px-page">
+	<nav
+		class="grid-cols-3 items-center justify-between rounded-full bg-dark-2 px-page-mobile py-2 sm:grid sm:py-4 md:px-page-tablet lg:px-page"
+	>
+		<ul class="hidden items-center gap-3 text-light-1 sm:flex lg:gap-6">
 			<li>
 				<a href="/" class={unactiveLink}>Inicio</a>
 			</li>
@@ -38,10 +40,10 @@ const unactiveLink =
 			</li>
 		</ul>
 		<a class="relative flex justify-center">
-			<Image src={logo} alt="Company Logo" />
-			<Image src={andCoffee} alt="Company Slogan" class={'absolute -bottom-6'} />
+			<Image src={logo} alt="Company Logo" class={'h-6 sm:h-10'} />
+			<Image src={andCoffee} alt="Company Slogan" class={'absolute sm:-bottom-6 -bottom-4 h-3 '} />
 		</a>
-		<ul class="flex items-center justify-end gap-4">
+		<ul class="hidden items-center justify-end gap-3 sm:flex lg:gap-6">
 			<li
 				class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
 			>
