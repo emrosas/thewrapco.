@@ -1,0 +1,11 @@
+{
+	"clásico": {
+		"name": "El Clásico",
+		"description": "Envuelto en nuestro pan de la casa de 5 granos, mayonesa de la casa, queso manchego artesanal, jamón (120 gr), lechuga y tomate.",
+		"price": 150,
+		"image": {
+			"src": "/images/clasico.png",
+			"alt": "Nuestro wrap clásico"
+		}
+	}
+}

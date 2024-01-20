@@ -6,6 +6,8 @@ import Image from 'astro/components/Image.astro'
 import flame from '../../../assets/wraps/flame.svg'
 import sun from '../../../assets/wraps/sun.svg'
 import wrap from '../../../assets/wraps/wrap.svg'
+// Data import
+import wrapsData from './wrapsData.json'
 ---
 
 <Layout title="Wraps">
@@ -24,5 +26,27 @@ import wrap from '../../../assets/wraps/wrap.svg'
 				</li>
 			</ul>
 		</header>
+		<section class="grid grid-cols-2 px-page py-12">
+			{
+				Object.keys(wrapsData).map((wrap) => {
+					return (
+						<div class="flex items-center justify-center gap-6 px-page py-12">
+							<img
+								src={wrapsData[wrap].image.src}
+								alt={wrapsData[wrap].image.alt}
+								class=" w-48 rounded-lg"
+							/>
+							<div>
+								<div class="flex items-center justify-between">
+									<h3 class="text-3xl font-semibold">{wrapsData[wrap].name}</h3>
+									<h4 class="text-3xl font-semibold">${wrapsData[wrap].price}</h4>
+								</div>
+								<p class=" text-2xl font-light">{wrapsData[wrap].description}</p>
+							</div>
+						</div>
+					)
+				})
+			}
+		</section>
 	</main>
 </Layout>
