@@ -13,10 +13,12 @@ import wrapsData from './wrapsData.json'
 <Layout title="Wraps">
 	<main>
 		<header class="flex items-center justify-between px-page py-12">
+			<!-- Section title -->
 			<div class="flex items-center gap-4">
 				<h1 class="text-8xl">Wraps</h1>
 				<Image src={wrap} alt="Wrap Icon" />
 			</div>
+			<!-- Icon explanations -->
 			<ul class="flex flex-col gap-4">
 				<li class="flex items-center gap-2">
 					<Image src={sun} alt="Sun Icon" /><p>Producto Picante</p>
@@ -26,22 +28,27 @@ import wrapsData from './wrapsData.json'
 				</li>
 			</ul>
 		</header>
-		<section class="grid grid-cols-2 px-page py-12">
+		<section class="grid grid-cols-2 gap-12 px-page py-12">
+			<!-- Maps the items from the data object -->
 			{
 				Object.keys(wrapsData).map((wrap) => {
 					return (
-						<div class="flex items-center justify-center gap-6 px-page py-12">
+						<div class="flex items-center justify-center gap-6">
 							<img
 								src={wrapsData[wrap].image.src}
 								alt={wrapsData[wrap].image.alt}
 								class=" w-48 rounded-lg"
 							/>
-							<div>
+							<div class="flex flex-col gap-2">
 								<div class="flex items-center justify-between">
-									<h3 class="text-3xl font-semibold">{wrapsData[wrap].name}</h3>
+									<div class="flex gap-2">
+										<h3 class="text-3xl font-semibold">{wrapsData[wrap].name}</h3>
+										{wrapsData[wrap].spicy && <Image src={flame} alt="Flame Icon" />}
+										{wrapsData[wrap].morning && <Image src={sun} alt="Sun Icon" />}
+									</div>
 									<h4 class="text-3xl font-semibold">${wrapsData[wrap].price}</h4>
 								</div>
-								<p class=" text-2xl font-light">{wrapsData[wrap].description}</p>
+								<p class=" text-xl font-light">{wrapsData[wrap].description}</p>
 							</div>
 						</div>
 					)

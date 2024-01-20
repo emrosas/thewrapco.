@@ -5,7 +5,86 @@
 		"price": 150,
 		"image": {
 			"src": "/images/clasico.png",
-			"alt": "Nuestro wrap clásico"
-		}
+			"alt": "Nuestro Wrap clásico"
+		},
+		"spicy": false,
+		"morning": true
+	},
+	"tuna": {
+		"name": "Tuna Wrap",
+		"description": "Envuelto en nuestro pan de la casa de 5 granos, mayonesa de la casa, queso manchego artesanal, atún, chipotle, lechuga y tomate.",
+		"price": 175,
+		"image": {
+			"src": "/images/tuna.png",
+			"alt": "Nuestro Tuna Wrap"
+		},
+		"spicy": false,
+		"morning": false
+	},
+	"bbq": {
+		"name": "BBQ Chicken",
+		"description": "Wrap envuelto en tortilla de harina, con frijoles, arroz, queso manchego artesanal, pechuga de pollo (100 gr) bañada en salsa BBQ.",
+		"price": 175,
+		"image": {
+			"src": "/images/bbq.png",
+			"alt": "Nuestro Wrap BBQ Chicken"
+		},
+		"spicy": false,
+		"morning": false
+	},
+	"poblano": {
+		"name": "El Poblano",
+		"description": "Envuelto en nuestro pan de la casa de 5 granos, mayonesa de la casa, queso manchego artesanal, jamón (120 gr), lechuga y tomate.",
+		"price": 150,
+		"image": {
+			"src": "/images/poblano.png",
+			"alt": "Nuestro wrap Poblano"
+		},
+		"spicy": false,
+		"morning": false
+	},
+	"meat": {
+		"name": "Meat Fajitas",
+		"description": "Wrap envuelto en tortilla de harina relleno de fajitas de arrachera (100 gr) con pimiento verde, tomate, cebolla, arroz, frijol y queso manchego.",
+		"price": 175,
+		"image": {
+			"src": "/images/meat.png",
+			"alt": "Nuestro Meat Fajitas Wrap"
+		},
+		"spicy": false,
+		"morning": false
+	},
+	"buffalo": {
+		"name": "Buffalo Chicken",
+		"description": "Wrap envuelto en tortilla de harina, con  tu  elección de base de frijoles o lechuga, arroz, queso manchego artesanal, pechuga de pollo a la plancha(100 gr) bañada en salsa buffalo.",
+		"price": 175,
+		"image": {
+			"src": "/images/buffalo.png",
+			"alt": "Nuestro Buffalo Chicken Wrap"
+		},
+		"spicy": true,
+		"morning": false
+	},
+	"chicken-salad": {
+		"name": "Chicken Salad Wrap",
+		"description": "La especialidad de la casa nuestro Wrap de tortilla de harina relleno de pechuga de pollo a la plancha (100 gr) bañado en aderezo ranch, queso manchego artesanal, lechuga y tomate.",
+		"price": 175,
+		"image": {
+			"src": "/images/chicken-salad.png",
+			"alt": "Nuestro Chicken Salad Wrap"
+		},
+		"spicy": true,
+		"morning": false
+	},
+	"mañanero": {
+		"name": "El Mañanero",
+		"description": "Envuelto en nuestro pan de la casa de 5 granos, mayonesa de la casa, queso manchego artesanal, jamón (120 gr), lechuga y tomate.",
+		"price": 150,
+		"image": {
+			"src": "/images/mañanero.png",
+			"alt": "Nuestro Wrap Mañanero"
+		},
+		"spicy": false,
+		"morning": true
 	}
 }
