@@ -10,7 +10,6 @@ import facebook from '../assets/navbar/facebook.svg'
 import tiktok from '../assets/navbar/tiktok.svg'
 const unactiveLink =
 	'decoration-brand-2 underline-offset-4 opacity-80 hover:underline hover:opacity-100'
-const activeLink = 'decoration-brand-2 underline-offset-4 opacity-100 underline'
 ---
 
 <script>
@@ -18,8 +17,8 @@ const activeLink = 'decoration-brand-2 underline-offset-4 opacity-100 underline'
 		const links = document.querySelectorAll('a')
 		links.forEach((link) => {
 			if (link.href === window.location.href) {
-				link.classList.add('underline')
-				link.classList.add('opacity-100')
+				link.classList.add('opacity-100', 'underline')
+				link.classList.remove('opacity-80')
 			}
 		})
 	}
@@ -29,23 +28,13 @@ const activeLink = 'decoration-brand-2 underline-offset-4 opacity-100 underline'
 	<nav class="grid grid-cols-3 justify-between rounded-full bg-dark-2 px-page py-4">
 		<ul class="flex items-center gap-6 text-light-1">
 			<li>
-				<a
-					href="/"
-					aria-current=""
-					class="decoration-brand-2 underline-offset-4 opacity-80 hover:underline hover:opacity-100"
-					>Inicio</a
-				>
+				<a href="/" class={unactiveLink}>Inicio</a>
 			</li>
 			<li>
-				<a href="/menu/wraps" aria-current="" class={unactiveLink}>Comida</a>
+				<a href="/menu/wraps" class={unactiveLink}>Comida</a>
 			</li>
 			<li>
-				<a
-					href="/menú/bebidas"
-					aria-current=""
-					class="decoration-brand-2 underline-offset-4 opacity-80 hover:underline hover:opacity-100"
-					>Bebidas</a
-				>
+				<a href="/menú/bebidas" class={unactiveLink}>Bebidas</a>
 			</li>
 		</ul>
 		<a class="relative flex justify-center">

@@ -1,0 +1,28 @@
+---
+// Component imports
+import Layout from '../../../layouts/Layout.astro'
+import Image from 'astro/components/Image.astro'
+// Icon imports
+import flame from '../../../assets/wraps/flame.svg'
+import sun from '../../../assets/wraps/sun.svg'
+import wrap from '../../../assets/wraps/wrap.svg'
+---
+
+<Layout title="Wraps">
+	<main>
+		<header class="flex items-center justify-between px-page py-12">
+			<div class="flex items-center gap-4">
+				<h1 class="text-8xl">Wraps</h1>
+				<Image src={wrap} alt="Wrap Icon" />
+			</div>
+			<ul class="flex flex-col gap-4">
+				<li class="flex items-center gap-2">
+					<Image src={sun} alt="Sun Icon" /><p>Producto Picante</p>
+				</li>
+				<li class="flex items-center gap-2">
+					<Image src={flame} alt="Flame Icon" /><p>Ideal para Desayunar</p>
+				</li>
+			</ul>
+		</header>
+	</main>
+</Layout>
