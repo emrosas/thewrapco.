@@ -1,0 +1,41 @@
+---
+
+---
+
+<script>
+	window.onload = () => {
+		const links = document.querySelectorAll('a')
+		const activeIndicator = document.getElementById('active-indicator')
+		const gridElement = document.querySelector('#links-grid')
+		const linkWidth = gridElement.getBoundingClientRect().width / gridElement.children.length
+		links.forEach((link, index) => {
+			if (link.href === window.location.href) {
+				link.classList.add('opacity-100', 'text-light-1')
+				link.classList.remove('text-dark-3')
+				activeIndicator.style.width = `${linkWidth}px`
+				activeIndicator.style.left = `${index * linkWidth}px`
+			}
+		})
+	}
+</script>
+
+<div
+	class="fixed bottom-0 left-0 right-0 flex items-center justify-center px-page-mobile py-8 md:px-page-tablet lg:px-page"
+>
+	<div
+		id="links-grid"
+		class="relative grid grid-cols-2 items-center justify-items-center rounded-full bg-light-2"
+	>
+		<a
+			href="/menu/wraps"
+			class="relative z-20 px-8 py-4 font-body text-lg font-semibold uppercase text-dark-3 no-underline"
+			>Wraps</a
+		>
+		<a
+			href="/menu/bebidas"
+			class="relative z-20 px-8 py-4 font-body text-lg font-semibold uppercase text-dark-3 no-underline"
+			>Bebidas</a
+		>
+		<div id="active-indicator" class="absolute z-0 h-full rounded-full bg-dark-3"></div>
+	</div>
+</div>

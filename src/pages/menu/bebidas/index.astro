@@ -1,0 +1,21 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import bebida from '../../../assets/bebidas/bebida.svg'
+import { Image } from 'astro:assets'
+import MenuNavbar from '../MenuNavbar.astro'
+---
+
+<Layout>
+	<MenuNavbar />
+	<main class="pb-24 pt-32">
+		<header
+			class="flex flex-col justify-between gap-8 px-page-mobile sm:flex-row sm:items-center md:px-page-tablet lg:px-page"
+		>
+			<!-- Section title -->
+			<div class="flex items-center gap-4">
+				<h1 class="text-8xl">Bebidas</h1>
+				<Image src={bebida} alt="Drink Icon" class={'w-20'} />
+			</div>
+		</header>
+	</main>
+</Layout>
