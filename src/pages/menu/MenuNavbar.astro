@@ -2,24 +2,6 @@
 
 ---
 
-<script>
-	window.onload = () => {
-		const gridElement = document.querySelector('#links-grid')
-		const links = gridElement?.querySelectorAll('a')
-		const activeIndicator = document.getElementById('active-indicator')
-		const linkWidth = gridElement.getBoundingClientRect().width / (gridElement.children.length - 1)
-		console.log(gridElement.getBoundingClientRect().width, linkWidth)
-		links.forEach((link, index) => {
-			if (link.href === window.location.href) {
-				link.classList.add('opacity-100', 'text-light-1')
-				link.classList.remove('text-dark-3')
-				activeIndicator.style.width = `${linkWidth}px`
-				activeIndicator.style.left = `${index * linkWidth}px`
-			}
-		})
-	}
-</script>
-
 <div
 	class="fixed bottom-0 left-0 right-0 flex items-center justify-center px-page-mobile py-8 md:px-page-tablet lg:px-page"
 >
@@ -40,3 +22,21 @@
 		<div id="active-indicator" class="absolute z-0 h-full rounded-full bg-dark-3"></div>
 	</div>
 </div>
+
+<script>
+	window.onload = () => {
+		const gridElement = document.querySelector('#links-grid')
+		const links = gridElement?.querySelectorAll('a')
+		const activeIndicator = document.getElementById('active-indicator')
+		const linkWidth = gridElement.getBoundingClientRect().width / (gridElement.children.length - 1)
+		console.log(gridElement.getBoundingClientRect().width, linkWidth)
+		links.forEach((link, index) => {
+			if (link.href === window.location.href) {
+				link.classList.add('opacity-100', 'text-light-1')
+				link.classList.remove('text-dark-3')
+				activeIndicator.style.width = `${linkWidth}px`
+				activeIndicator.style.left = `${index * linkWidth}px`
+			}
+		})
+	}
+</script>
