@@ -2,6 +2,30 @@
 
 ---
 
+<script>
+	window.onload = () => {
+		const gridElement = document.getElementById('links-grid')
+		if (!gridElement) {
+			console.log('No grid element found')
+			return
+		}
+		const links = document.querySelectorAll('.menu-link')
+		const activeIndicator = document.getElementById('active-indicator')
+		const linkWidth = gridElement.getBoundingClientRect().width / (gridElement.children.length - 1)
+		links.forEach((link, index) => {
+			const anchorLink = link as HTMLAnchorElement
+			if (anchorLink.href === window.location.href) {
+				anchorLink.classList.add('opacity-100', 'text-light-1')
+				anchorLink.classList.remove('text-dark-3')
+				if (activeIndicator) {
+					activeIndicator.style.width = `${linkWidth}px`
+					activeIndicator.style.left = `${index * linkWidth}px`
+				}
+			}
+		})
+	}
+</script>
+
 <div
 	class="fixed bottom-0 left-0 right-0 flex items-center justify-center px-page-mobile py-8 md:px-page-tablet lg:px-page"
 >
@@ -11,32 +35,14 @@
 	>
 		<a
 			href="/menu/wraps"
-			class="relative z-20 px-8 py-4 font-body text-lg font-semibold uppercase text-dark-3 no-underline"
+			class="menu-link relative z-20 px-8 py-4 font-body text-lg font-semibold uppercase text-dark-3 no-underline"
 			>Wraps</a
 		>
 		<a
 			href="/menu/bebidas"
-			class="relative z-20 px-8 py-4 font-body text-lg font-semibold uppercase text-dark-3 no-underline"
+			class="menu-link relative z-20 px-8 py-4 font-body text-lg font-semibold uppercase text-dark-3 no-underline"
 			>Bebidas</a
 		>
 		<div id="active-indicator" class="absolute z-0 h-full rounded-full bg-dark-3"></div>
 	</div>
 </div>
-
-<script is:inline>
-	window.onload = () => {
-		const gridElement = document.querySelector('#links-grid')
-		const links = gridElement?.querySelectorAll('a')
-		const activeIndicator = document.getElementById('active-indicator')
-		const linkWidth = gridElement.getBoundingClientRect().width / (gridElement.children.length - 1)
-		console.log(gridElement.getBoundingClientRect().width, linkWidth)
-		links.forEach((link, index) => {
-			if (link.href === window.location.href) {
-				link.classList.add('opacity-100', 'text-light-1')
-				link.classList.remove('text-dark-3')
-				activeIndicator.style.width = `${linkWidth}px`
-				activeIndicator.style.left = `${index * linkWidth}px`
-			}
-		})
-	}
-</script>
