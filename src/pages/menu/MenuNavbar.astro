@@ -2,7 +2,7 @@
 
 ---
 
-<script>
+<script type="module">
 	window.onload = () => {
 		const gridElement = document.getElementById('links-grid')
 		if (!gridElement) {
@@ -13,10 +13,9 @@
 		const activeIndicator = document.getElementById('active-indicator')
 		const linkWidth = gridElement.getBoundingClientRect().width / (gridElement.children.length - 1)
 		links.forEach((link, index) => {
-			const anchorLink = link as HTMLAnchorElement
-			if (anchorLink.href === window.location.href) {
-				anchorLink.classList.add('opacity-100', 'text-light-1')
-				anchorLink.classList.remove('text-dark-3')
+			if (link.href === window.location.href) {
+				link.classList.add('opacity-100', 'text-light-1')
+				link.classList.remove('text-dark-3')
 				if (activeIndicator) {
 					activeIndicator.style.width = `${linkWidth}px`
 					activeIndicator.style.left = `${index * linkWidth}px`
