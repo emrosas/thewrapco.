@@ -9,6 +9,7 @@ import '@fontsource/poppins/300.css'
 import '@fontsource/poppins/500.css'
 import '@fontsource/poppins/600.css'
 import Navbar from '../components/Navbar.astro'
+import MenuNavbar from '../components/MenuNavbar.astro'
 ---
 
 <!doctype html>
@@ -25,6 +26,7 @@ import Navbar from '../components/Navbar.astro'
 	<body class="bg-light-1 font-body text-dark-1">
 		<Navbar />
 		<slot />
+		<MenuNavbar />
 	</body>
 </html>
 
