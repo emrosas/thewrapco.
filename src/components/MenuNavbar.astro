@@ -3,7 +3,7 @@
 ---
 
 <script>
-	window.onload = () => {
+	document.addEventListener('DOMContentLoaded', () => {
 		const gridElement = document.getElementById('links-grid')
 		if (!gridElement) {
 			console.log('No grid element found')
@@ -13,8 +13,8 @@
 		const activeIndicator = document.getElementById('active-indicator')
 		const linkWidth = gridElement.getBoundingClientRect().width / (gridElement.children.length - 1)
 		links.forEach((link, index) => {
-			console.log(link.href, window.location.href)
-			if (link.href === window.location.href) {
+			console.log((link as HTMLAnchorElement).href, window.location.href)
+			if ((link as HTMLAnchorElement).href === window.location.href) {
 				link.classList.add('opacity-100', 'text-light-1')
 				link.classList.remove('text-dark-3')
 				if (activeIndicator) {
@@ -23,7 +23,7 @@
 				}
 			}
 		})
-	}
+	})
 </script>
 
 <div
