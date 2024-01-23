@@ -33,32 +33,34 @@ import MenuNavbar from '../../../components/MenuNavbar.astro'
 				</li>
 			</ul>
 		</header>
-		<section class="grid gap-12 px-page-mobile py-12 md:grid-cols-2 md:px-page-tablet lg:px-page">
-			<!-- Maps the items from the data object -->
-			{
-				Object.keys(wrapsData).map((wrap) => {
-					return (
-						<div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
-							<img
-								src={wrapsData[wrap].image.src}
-								alt={wrapsData[wrap].image.alt}
-								class="w-full rounded-lg sm:w-48"
-							/>
-							<div class="flex flex-col gap-2">
-								<div class="flex items-center justify-between">
-									<div class="flex gap-2">
-										<h3 class="text-2xl font-semibold lg:text-3xl">{wrapsData[wrap].name}</h3>
-										{wrapsData[wrap].spicy && <Image src={flame} alt="Flame Icon" />}
-										{wrapsData[wrap].morning && <Image src={sun} alt="Sun Icon" />}
+		<section class="px-page-mobile py-12 md:px-page-tablet lg:px-page">
+			<div class="grid gap-6 md:grid-cols-2">
+				<!-- Maps the items from the data object -->
+				{
+					Object.keys(wrapsData).map((wrap) => {
+						return (
+							<div class="flex flex-col items-center justify-center gap-3 sm:flex-row">
+								<img
+									src={wrapsData[wrap].image.src}
+									alt={wrapsData[wrap].image.alt}
+									class="w-full rounded-lg sm:w-48"
+								/>
+								<div class="flex flex-col gap-2">
+									<div class="flex items-center justify-between">
+										<div class="flex gap-2">
+											<h3 class="text-2xl font-semibold lg:text-3xl">{wrapsData[wrap].name}</h3>
+											{wrapsData[wrap].spicy && <Image src={flame} alt="Flame Icon" />}
+											{wrapsData[wrap].morning && <Image src={sun} alt="Sun Icon" />}
+										</div>
+										<h4 class="text-xl font-semibold lg:text-3xl">${wrapsData[wrap].price}</h4>
 									</div>
-									<h4 class="text-xl font-semibold lg:text-3xl">${wrapsData[wrap].price}</h4>
+									<p class="text-md font-light lg:text-lg">{wrapsData[wrap].description}</p>
 								</div>
-								<p class="text-md font-light lg:text-lg">{wrapsData[wrap].description}</p>
 							</div>
-						</div>
-					)
-				})
-			}
+						)
+					})
+				}
+			</div>
 		</section>
 	</main>
 </Layout>

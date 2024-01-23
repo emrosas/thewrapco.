@@ -1,22 +1,27 @@
 ---
-
+import { Image } from 'astro:assets'
+import wrap from '../assets/navbar/wrap.svg'
+import cup from '../assets/navbar/cup.svg'
 ---
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
+	document.addEventListener('astro:page-load', () => {
 		const gridElement = document.getElementById('links-grid')
 		if (!gridElement) {
-			console.log('No grid element found')
 			return
 		}
 		const links = document.querySelectorAll('.menu-link')
 		const activeIndicator = document.getElementById('active-indicator')
 		const linkWidth = gridElement.getBoundingClientRect().width / (gridElement.children.length - 1)
 		links.forEach((link, index) => {
-			console.log((link as HTMLAnchorElement).href, window.location.href)
 			if ((link as HTMLAnchorElement).href === window.location.href) {
 				link.classList.add('opacity-100', 'text-light-1')
 				link.classList.remove('text-dark-3')
+				const innerIcon = link.querySelector('.icon-holder')
+				if (innerIcon) {
+					innerIcon.classList.add('bg-brand-2')
+					innerIcon.classList.remove('bg-dark-3')
+				}
 				if (activeIndicator) {
 					activeIndicator.style.width = `${linkWidth}px`
 					activeIndicator.style.left = `${index * linkWidth}px`
@@ -35,14 +40,27 @@
 	>
 		<a
 			href="/menu/wraps/"
-			class="menu-link relative z-20 px-8 py-4 font-body text-lg font-semibold uppercase text-dark-3 no-underline"
-			>Wraps</a
+			class="menu-link relative z-20 flex gap-2 px-8 py-4 font-body text-lg font-semibold uppercase text-dark-3 no-underline"
+		>
+			<div class="icon-holder flex items-center justify-center rounded-full bg-dark-3 p-2">
+				<Image src={wrap} alt={'Wrap Icon'} />
+			</div>
+			 Wraps</a
 		>
 		<a
 			href="/menu/bebidas/"
-			class="menu-link relative z-20 px-8 py-4 font-body text-lg font-semibold uppercase text-dark-3 no-underline"
-			>Bebidas</a
+			class="menu-link relative z-20 flex gap-2 px-8 py-4 font-body text-lg font-semibold uppercase text-dark-3 no-underline"
 		>
-		<div id="active-indicator" class="absolute z-0 h-full rounded-full bg-dark-3"></div>
+			<div class="icon-holder flex items-center justify-center rounded-full bg-dark-3 p-2">
+				<Image src={cup} alt={'Cup Icon'} />
+			</div>
+			 Bebidas</a
+		>
+		<div
+			transition:name="indicator"
+			id="active-indicator"
+			class="absolute z-0 h-full rounded-full bg-dark-3"
+		>
+		</div>
 	</div>
 </div>

@@ -13,7 +13,7 @@ const unactiveLink =
 ---
 
 <script>
-	window.onload = () => {
+	document.addEventListener('astro:page-load', () => {
 		const links = document.querySelectorAll('a')
 		links.forEach((link) => {
 			if (link.href === window.location.href) {
@@ -21,25 +21,25 @@ const unactiveLink =
 				link.classList.remove('opacity-80')
 			}
 		})
-	}
+	})
 </script>
 
 <div
 	id="nav-container"
-	class="fixed left-0 right-0 top-0 px-page-mobile pt-4 md:px-page-tablet lg:px-page"
+	class="fixed left-0 right-0 top-0 w-full px-page-mobile pt-4 md:px-page-tablet lg:px-page"
 >
 	<nav
-		class="grid-cols-3 items-center justify-between rounded-full bg-dark-2 px-page-mobile py-2 sm:grid sm:py-4 md:px-page-tablet lg:px-page"
+		class="w-full grid-cols-3 items-center justify-between rounded-full bg-dark-2 px-page-mobile py-2 sm:grid sm:py-4 md:px-page-tablet lg:px-page"
 	>
 		<ul class="hidden items-center gap-3 text-light-1 sm:flex lg:gap-6">
 			<li>
 				<a href="/" class={unactiveLink}>Inicio</a>
 			</li>
 			<li>
-				<a href="/menu/wraps" class={unactiveLink}>Menú</a>
+				<a href="/menu/wraps/" class={unactiveLink}>Menú</a>
 			</li>
 			<li>
-				<a href="/contacto" class={unactiveLink}>Contacto</a>
+				<a href="/contacto/" class={unactiveLink}>Contacto</a>
 			</li>
 		</ul>
 		<a class="relative flex justify-center">

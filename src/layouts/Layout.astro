@@ -9,7 +9,7 @@ import '@fontsource/poppins/300.css'
 import '@fontsource/poppins/500.css'
 import '@fontsource/poppins/600.css'
 import Navbar from '../components/Navbar.astro'
-import MenuNavbar from '../components/MenuNavbar.astro'
+import { ViewTransitions } from 'astro:transitions'
 ---
 
 <!doctype html>
@@ -22,17 +22,16 @@ import MenuNavbar from '../components/MenuNavbar.astro'
 		<link rel="stylesheet" href="fonts.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body class="bg-light-1 font-body text-dark-1">
 		<Navbar />
 		<slot />
-	</body>
+	</body><style is:global>
+		h1 {
+			text-transform: uppercase;
+			font-weight: 600;
+			font-size: 2rem;
+		}
+	</style>
 </html>
-
-<style is:global>
-	h1 {
-		text-transform: uppercase;
-		font-weight: 600;
-		font-size: 2rem;
-	}
-</style>
