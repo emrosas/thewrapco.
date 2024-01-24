@@ -2,11 +2,10 @@
 // Component Import
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
+import Navlinks from './Navlinks.astro'
 // Image Imports
 import logo from '../assets/navbar/logo-horizontal.svg'
 import andCoffee from '../assets/navbar/and-coffee.svg'
-const unactiveLink =
-	'decoration-brand-2 underline-offset-4 opacity-80 hover:underline hover:opacity-100'
 ---
 
 <script>
@@ -30,13 +29,13 @@ const unactiveLink =
 	>
 		<ul class="hidden items-center gap-3 text-light-1 sm:flex lg:gap-6">
 			<li>
-				<a href="/" class={unactiveLink}>Inicio</a>
+				<Navlinks href="/" text="Inicio" />
 			</li>
 			<li>
-				<a href="/menu/wraps/" class={unactiveLink}>Menú</a>
+				<Navlinks href="/menu/wraps/" text="Menú" />
 			</li>
 			<li>
-				<a href="/contacto/" class={unactiveLink}>Contacto</a>
+				<Navlinks href="/contacto/" text="Contacto" />
 			</li>
 		</ul>
 		<a class="relative flex justify-center">

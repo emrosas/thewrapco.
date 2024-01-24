@@ -1,0 +1,63 @@
+---
+const currentYear = new Date().getFullYear()
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+import Navlinks from './Navlinks.astro'
+import footerLogo from '../assets/navbar/footer-logo.svg'
+---
+
+<footer
+	class="rounded-t-[3rem] bg-dark-2 px-page-mobile py-12 text-light-1 md:px-page-tablet lg:px-page"
+>
+	<div class="grid grid-cols-6">
+		<Image class="col-span-2 w-32" src={footerLogo} alt="Brand Logo" />
+		<div class="col-span-4 flex flex-col justify-between gap-8">
+			<div class="flex justify-between">
+				<ul class="flex flex-col gap-8">
+					<li><Navlinks href="/" text="Inicio" /></li>
+					<li><Navlinks href="/menu/wraps/" text="Menú" /></li>
+					<li><Navlinks href="/contacto/" text="Contacto" /></li>
+				</ul>
+				<ul class="class= flex flex-col gap-4 font-light">
+					<li>Rio Mississippi 129 A, Del Valle, 66220 San Pedro Garza García, N.L.</li>
+					<li>contacto@thewrap.co</li>
+					<li>proveedores@thewrap.co</li>
+					<li>81 144 9988</li>
+				</ul>
+				<ul class="hidden items-center justify-end gap-3 sm:flex lg:gap-6">
+					<li
+						class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
+					>
+						<a
+							href="/"
+							class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
+							><Icon name={'socials/instagram'} /></a
+						>
+					</li>
+					<li
+						class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
+					>
+						<a
+							href="/"
+							class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
+							><Icon name={'socials/facebook'} /></a
+						>
+					</li>
+					<li
+						class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
+					>
+						<a
+							href="/"
+							class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
+							><Icon name={'socials/tiktok'} /></a
+						>
+					</li>
+				</ul>
+			</div>
+			<p>
+				&copy;{currentYear} The Wrap Co. & Coffee. Todos los Derechos Reservados. Sitio por Name Not
+				Found
+			</p>
+		</div>
+	</div>
+</footer>

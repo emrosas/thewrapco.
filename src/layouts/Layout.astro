@@ -9,6 +9,7 @@ import '@fontsource/poppins/300.css'
 import '@fontsource/poppins/500.css'
 import '@fontsource/poppins/600.css'
 import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
 import { ViewTransitions } from 'astro:transitions'
 ---
 
@@ -24,9 +25,10 @@ import { ViewTransitions } from 'astro:transitions'
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body class="bg-light-1 font-body text-dark-1">
+	<body class="overscroll-none bg-light-1 font-body text-dark-1">
 		<Navbar />
 		<slot />
+		<Footer />
 		<style is:global>
 			h1 {
 				text-transform: uppercase;
