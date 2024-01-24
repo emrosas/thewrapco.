@@ -1,13 +1,10 @@
 ---
 // Component Import
 import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
 // Image Imports
 import logo from '../assets/navbar/logo-horizontal.svg'
 import andCoffee from '../assets/navbar/and-coffee.svg'
-// Social Media Icons
-import instagram from '../assets/navbar/instagram.svg'
-import facebook from '../assets/navbar/facebook.svg'
-import tiktok from '../assets/navbar/tiktok.svg'
 const unactiveLink =
 	'decoration-brand-2 underline-offset-4 opacity-80 hover:underline hover:opacity-100'
 ---
@@ -57,7 +54,7 @@ const unactiveLink =
 				<a
 					href="/"
 					class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
-					><Image src={instagram} alt="Social Media Icon" width={20} height={20} /></a
+					><Icon name={'socials/instagram'} /></a
 				>
 			</li>
 			<li
@@ -66,7 +63,7 @@ const unactiveLink =
 				<a
 					href="/"
 					class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
-					><Image src={facebook} alt="Social Media Icon" width={20} height={20} /></a
+					><Icon name={'socials/facebook'} /></a
 				>
 			</li>
 			<li
@@ -75,7 +72,7 @@ const unactiveLink =
 				<a
 					href="/"
 					class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
-					><Image src={tiktok} alt="Social Media Icon" width={20} height={20} /></a
+					><Icon name={'socials/tiktok'} /></a
 				>
 			</li>
 		</ul>

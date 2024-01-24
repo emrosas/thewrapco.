@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro'
-import bebida from '../../../assets/bebidas/bebida.svg'
 import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
 import MenuNavbar from '../../../components/MenuNavbar.astro'
 ---
 
@@ -14,7 +14,7 @@ import MenuNavbar from '../../../components/MenuNavbar.astro'
 			<!-- Section title -->
 			<div class="flex items-center gap-4">
 				<h1 class="text-6xl md:text-8xl">Bebidas</h1>
-				<Image src={bebida} alt="Drink Icon" class={'w-12 md:w-20'} />
+				<Icon name={'food/bebida'} size={80} />
 			</div>
 		</header>
 	</main>

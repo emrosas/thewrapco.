@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import wrap from '../assets/navbar/wrap.svg'
-import cup from '../assets/navbar/cup.svg'
+import { Icon } from 'astro-icon/components'
 ---
 
 <script>
@@ -43,7 +42,7 @@ import cup from '../assets/navbar/cup.svg'
 			class="menu-link relative z-20 flex gap-2 px-8 py-4 font-body text-lg font-semibold uppercase text-dark-3 no-underline"
 		>
 			<div class="icon-holder flex items-center justify-center rounded-full bg-dark-3 p-2">
-				<Image src={wrap} alt={'Wrap Icon'} />
+				<Icon name={'food/wrap'} />
 			</div>
 			 Wraps</a
 		>
@@ -52,7 +51,7 @@ import cup from '../assets/navbar/cup.svg'
 			class="menu-link relative z-20 flex gap-2 px-8 py-4 font-body text-lg font-semibold uppercase text-dark-3 no-underline"
 		>
 			<div class="icon-holder flex items-center justify-center rounded-full bg-dark-3 p-2">
-				<Image src={cup} alt={'Cup Icon'} />
+				<Icon name={'food/cup'} />
 			</div>
 			 Bebidas</a
 		>
