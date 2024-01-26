@@ -1,22 +1,150 @@
 ---
 //Component imports
 import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
 import Layout from '../layouts/Layout.astro'
+import Button from '../components/Button.astro'
 
 //Asset imports
-import heroBg from '../images/home/hero-bg.png'
+import bbqWrap from '../assets/home/bbq-wrap.png'
+import drink from '../assets/home/drink.png'
+import reviews from '../reviews.json'
 ---
 
 <Layout
 	title="The Wrap Co."
 	description="Deliciosos Wraps artesanales y café nacional para acompañar tu día."
 >
-	<main>
+	<main class="overflow-x-hidden">
 		<header class="h-screen bg-light-2 px-page-mobile pb-24 pt-32 md:px-page-tablet lg:px-page">
 			<h1>Welcome to flavortown!</h1>
 		</header>
-		<section class="px-page-mobile py-24 md:px-page-tablet lg:px-page">
-			<div><p>Wraps are dope!</p></div>
+		<!-- Features Section -->
+		<section class="px-page-mobile py-32 md:px-page-tablet lg:px-page">
+			<div class="flex flex-col">
+				<h2 class="mx-auto mb-16 text-balance text-center text-3xl font-semibold leading-normal">
+					Nuestra creciente pasión por ofrecer comida deliciosa nos impulsa cada día a mejorar
+					nuestros productos.
+				</h2>
+				<ul class="flex gap-8 text-light-1">
+					<li class="flex-grow rounded-3xl bg-brand-2 p-6">
+						<div class="mb-2 flex items-center gap-4">
+							<Icon name="food/coffee" size={36} /><h4 class="text-xl font-medium">
+								Caliente y Crocante
+							</h4>
+						</div>
+						<p class="text-sm font-light leading-loose">
+							Lorem ipsum dolor sit amet consectetur. Eget rhoncus nulla aliquet est erat arcu.
+							Pulvinar vestibulum massa vitae et lectus. Etiam hendrerit quam nisl ut felis viverra.
+						</p>
+					</li>
+					<li class="flex-grow rounded-3xl bg-brand-2 p-6">
+						<div class="mb-2 flex items-center gap-4">
+							<Icon name="food/crown" size={36} /><h4 class="text-xl font-medium">
+								Máxima Calidad
+							</h4>
+						</div>
+						<p class="text-sm font-light leading-loose">
+							Lorem ipsum dolor sit amet consectetur. Eget rhoncus nulla aliquet est erat arcu.
+							Pulvinar vestibulum massa vitae et lectus. Etiam hendrerit quam nisl ut felis viverra.
+						</p>
+					</li>
+					<li class="flex-grow rounded-3xl bg-brand-2 p-6">
+						<div class="mb-2 flex items-center gap-4">
+							<Icon name="food/scooter" size={36} /><h4 class="text-xl font-medium">
+								Siempre cerca de ti
+							</h4>
+						</div>
+						<p class="text-sm font-light leading-loose">
+							Lorem ipsum dolor sit amet consectetur. Eget rhoncus nulla aliquet est erat arcu.
+							Pulvinar vestibulum massa vitae et lectus. Etiam hendrerit quam nisl ut felis viverra.
+						</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- Main Differentiator Section -->
+		<section class="bg-dark-2 px-page-mobile py-20 text-light-3 md:px-page-tablet lg:px-page">
+			<div class="grid grid-cols-2 items-center gap-8">
+				<div class="flex flex-col gap-4">
+					<h2 class="text-5xl font-semibold leading-tight">
+						Sección de distinción de marca principal
+					</h2>
+					<p class="text-xl font-light leading-loose">
+						Descubre nuestra deliciosa variedad de wraps, chapatas, pan dulce y café que acompañaran
+						a tu día <b class="font-medium">de manera perfecta</b>.
+					</p>
+					<p class="text-xl font-light leading-loose">
+						Descubre nuestra <b class="font-medium">deliciosa variedad de wraps</b>, chapatas, pan
+						dulce y café que acompañaran a tu día de manera perfecta.
+					</p>
+				</div>
+				<Image
+					class="h-full rounded-3xl border border-light-3 object-cover"
+					src={bbqWrap}
+					alt="BBQ Wrap."
+				/>
+			</div>
+		</section>
+		<!-- Reviews Section -->
+		<section class="py-32">
+			<div class="flex flex-col">
+				<h2
+					class="mx-auto mb-16 max-w-[50ch] text-balance text-center text-3xl font-semibold leading-normal"
+				>
+					Escucha lo que dicen las personas que ya probaron nuestros wraps!
+				</h2>
+				<ul
+					class="hide-scrollbar flex snap-x gap-8 overflow-x-scroll px-page-mobile md:px-page-tablet lg:px-page"
+				>
+					{
+						Object.keys(reviews).map((review) => (
+							<li class="flex w-[30%] flex-shrink-0 flex-grow-0 snap-center flex-col gap-2">
+								<div class="flex gap-2">
+									{Array.from({ length: reviews[review].rating }).map(() => (
+										<Icon name={'info/star'} />
+									))}
+								</div>
+								<h4 class="text-xl font-medium">{reviews[review].name}</h4>
+								<p class="text-sm font-light leading-loose">{reviews[review].review}</p>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</section>
+		<!-- Online Order Section -->
+		<section class="bg-dark-3 text-light-2">
+			<div class="grid grid-cols-2 items-center gap-8">
+				<Image class="h-full object-cover" src={drink} alt="Caramel Frappe" />
+				<div class="flex flex-col items-start gap-4">
+					<h2 class="text-5xl font-semibold leading-tight">
+						Tus bebidas favoritas.
+						<br />
+						 En todos lados.
+					</h2>
+					<p class="text-balance text-xl font-light leading-loose">
+						Puedes encontrar nuestro menú completo de Wraps y Bebidas en <b class="font-medium"
+							>Rappi</b
+						> y <b class="font-medium">Uber Eats</b>.
+					</p>
+					<Button text="Realizar un pedido" href="/contact/" mode="secondary" />
+				</div>
+			</div>
+		</section>
+		<!-- FAQs Section -->
+		<section class="px-page-mobile py-32 md:px-page-tablet lg:px-page">
+			<div class="grid grid-cols-6">
+				<div class="col-span-2 flex flex-col items-start gap-4">
+					<h2 class="text-3xl font-semibold leading-tight">Preguntas Frecuentes</h2>
+					<p class="text-balance text-xl font-light leading-loose">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
+						elementum tristique.
+					</p>
+					<Button text="Ver Menú" href="/menu/wraps/" />
+				</div>
+				<div class="col-span-4"></div>
+			</div>
 		</section>
 	</main>
 </Layout>

@@ -28,7 +28,8 @@ module.exports = {
 				'brand-1': '#C6C66C',
 				'brand-2': '#DB8152',
 				'light-1': '#FBFBF9',
-				'light-2': '#FFD699'
+				'light-2': '#FFD699',
+				'light-3': '#EAEA7B'
 			}
 		}
 	},

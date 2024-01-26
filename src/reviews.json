@@ -1,0 +1,22 @@
+{
+	"Julian Dominguez": {
+		"name": "Julian Dominguez",
+		"review": "I love this place! The food is amazing and the service is great. I highly recommend it!",
+		"rating": 5
+	},
+	"Maria Rodriguez": {
+		"name": "Maria Rodriguez",
+		"review": "The atmosphere here is fantastic and the wraps are to die for. Definitely coming back!",
+		"rating": 4
+	},
+	"Carlos Garcia": {
+		"name": "Carlos Garcia",
+		"review": "Great place for a quick bite. The coffee is also really good.",
+		"rating": 4
+	},
+	"Ana Fernandez": {
+		"name": "Ana Fernandez",
+		"review": "A hidden gem for sure! The food is fresh and delicious, and the staff is super friendly.",
+		"rating": 5
+	}
+}
