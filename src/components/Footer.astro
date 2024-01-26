@@ -4,25 +4,35 @@ import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 import Navlinks from './Navlinks.astro'
 import footerLogo from '../assets/navbar/footer-logo.svg'
+import bgWrap from '../assets/navbar/bg-wrap.svg'
 ---
 
 <footer
-	class="rounded-t-[3rem] bg-dark-2 px-page-mobile py-12 text-light-1 md:px-page-tablet lg:px-page"
+	class="relative overflow-clip rounded-t-[3rem] bg-dark-2 px-page-mobile py-12 text-light-1 md:px-page-tablet lg:px-page"
 >
-	<div class="grid grid-cols-6">
-		<Image class="col-span-2 w-32" src={footerLogo} alt="Brand Logo" />
-		<div class="col-span-4 flex flex-col justify-between gap-8">
-			<div class="flex justify-between">
-				<ul class="flex flex-col gap-8">
+	<div class="absolute inset-0 z-0 flex items-center justify-center opacity-[2%]">
+		<Image src={bgWrap} alt={'A wrap icon as a detail in the bg'} />
+	</div>
+	<div class="relative z-20 grid grid-cols-6">
+		<Image class="col-span-2 h-full" src={footerLogo} alt="Brand Logo" />
+		<div class="col-span-4 flex flex-col items-end justify-between gap-8">
+			<div class="flex items-start justify-between gap-32">
+				<ul class="flex flex-col gap-4">
 					<li><Navlinks href="/" text="Inicio" /></li>
 					<li><Navlinks href="/menu/wraps/" text="Menú" /></li>
 					<li><Navlinks href="/contacto/" text="Contacto" /></li>
 				</ul>
 				<ul class="class= flex flex-col gap-4 font-light">
-					<li>Rio Mississippi 129 A, Del Valle, 66220 San Pedro Garza García, N.L.</li>
-					<li>contacto@thewrap.co</li>
-					<li>proveedores@thewrap.co</li>
-					<li>81 144 9988</li>
+					<li>
+						<Navlinks
+							href="/contacto/"
+							text="Rio Mississippi 129 A, Del Valle, 66220 San Pedro Garza García, N.L."
+							icon="info/map"
+						/>
+					</li>
+					<li><Navlinks href="/contacto/" text="contacto@thewrap.co" icon="info/mail" /></li>
+					<li><Navlinks href="/contacto/" text="proveedores@thewrap.co" icon="info/mail" /></li>
+					<li><Navlinks href="/contacto/" text="81 144 9988" icon="info/phone" /></li>
 				</ul>
 				<ul class="hidden items-center justify-end gap-3 sm:flex lg:gap-6">
 					<li
@@ -54,7 +64,7 @@ import footerLogo from '../assets/navbar/footer-logo.svg'
 					</li>
 				</ul>
 			</div>
-			<p>
+			<p class="opacity-50">
 				&copy;{currentYear} The Wrap Co. & Coffee. Todos los Derechos Reservados. Sitio por Name Not
 				Found
 			</p>

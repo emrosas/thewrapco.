@@ -1,7 +1,16 @@
 ---
+interface Props {
+	href: string
+	text: string
+	icon?: string
+}
+import { Icon } from 'astro-icon/components'
 const unactiveLink =
 	'decoration-brand-2 underline-offset-4 opacity-80 hover:underline hover:opacity-100'
-const { href, text } = Astro.props
+const { href, text, icon } = Astro.props
 ---
 
-<a href={href} class={unactiveLink}>{text}</a>
+<a href={href} class={unactiveLink}>
+	{icon && <Icon name={icon} class="mr-2 inline-block" size={16} />}
+	{text}
+</a>
