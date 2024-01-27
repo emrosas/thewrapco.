@@ -4,6 +4,7 @@ import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 import Layout from '../layouts/Layout.astro'
 import Button from '../components/Button.astro'
+import FAQ from '../components/FAQ.jsx'
 
 //Asset imports
 import bbqWrap from '../assets/home/bbq-wrap.png'
@@ -134,7 +135,7 @@ import reviews from '../reviews.json'
 		</section>
 		<!-- FAQs Section -->
 		<section class="px-page-mobile py-32 md:px-page-tablet lg:px-page">
-			<div class="grid grid-cols-6">
+			<div class="grid grid-cols-6 items-start">
 				<div class="col-span-2 flex flex-col items-start gap-4">
 					<h2 class="text-3xl font-semibold leading-tight">Preguntas Frecuentes</h2>
 					<p class="text-balance text-xl font-light leading-loose">
@@ -143,7 +144,28 @@ import reviews from '../reviews.json'
 					</p>
 					<Button text="Ver Menú" href="/menu/wraps/" />
 				</div>
-				<div class="col-span-4"></div>
+				<div class="col-span-4 border-b border-dark-1">
+					<FAQ
+						client:load
+						question="Por qué utilizan pan en sus Wraps de la casa?"
+						answer="Lorem ipsum dolor sit amet consectetur. Eget rhoncus nulla aliquet est erat arcu. Pulvinar vestibulum massa vitae et lectus. Etiam hendrerit quam nisl ut felis viverra. Lorem ipsum dolor sit amet consectetur. Eget rhoncus nulla aliquet est erat arcu. Pulvinar vestibulum massa vitae et lectus. Etiam hendrerit quam nisl ut felis viverra."
+					/>
+					<FAQ
+						client:load
+						question="Hornean el pan a diario?"
+						answer="Lorem ipsum dolor sit amet consectetur. Eget rhoncus nulla aliquet est erat arcu. Pulvinar vestibulum massa vitae et lectus. Etiam hendrerit quam nisl ut felis viverra. Lorem ipsum dolor sit amet consectetur. Eget rhoncus nulla aliquet est erat arcu. Pulvinar vestibulum massa vitae et lectus. Etiam hendrerit quam nisl ut felis viverra."
+					/>
+					<FAQ
+						client:load
+						question="Su café es delicioso, Cómo es que tiene un sabor tan bueno?"
+						answer="Lorem ipsum dolor sit amet consectetur. Eget rhoncus nulla aliquet est erat arcu. Pulvinar vestibulum massa vitae et lectus. Etiam hendrerit quam nisl ut felis viverra. Lorem ipsum dolor sit amet consectetur. Eget rhoncus nulla aliquet est erat arcu. Pulvinar vestibulum massa vitae et lectus. Etiam hendrerit quam nisl ut felis viverra."
+					/>
+					<FAQ
+						client:load
+						question="Por qué utilizan pan en sus Wraps de la casa?"
+						answer="Lorem ipsum dolor sit amet consectetur. Eget rhoncus nulla aliquet est erat arcu. Pulvinar vestibulum massa vitae et lectus. Etiam hendrerit quam nisl ut felis viverra. Lorem ipsum dolor sit amet consectetur. Eget rhoncus nulla aliquet est erat arcu. Pulvinar vestibulum massa vitae et lectus. Etiam hendrerit quam nisl ut felis viverra."
+					/>
+				</div>
 			</div>
 		</section>
 	</main>
