@@ -11,6 +11,11 @@ import frappes from '../../../assets/bebidas/frappes.png'
 import refreshments from '../../../assets/bebidas/refreshments.png'
 //Data imports
 import drinksData from './drinksData.json'
+Object.keys(drinksData.refreshments).forEach((drink) => {
+	if (drinksData.refreshments[drink].special) {
+		console.log(drinksData.refreshments[drink])
+	}
+})
 ---
 
 <Layout
@@ -50,7 +55,9 @@ import drinksData from './drinksData.json'
 											${drinksData.calientes[drink].prices.small}
 										</p>
 										<p class="min-w-16 text-end text-2xl">
-											${drinksData.calientes[drink].prices.small}
+											{drinksData.calientes[drink].prices.large === 0
+												? '-'
+												: '$' + drinksData.calientes[drink].prices.large}
 										</p>
 									</div>
 								</li>
@@ -67,8 +74,8 @@ import drinksData from './drinksData.json'
 				<div>
 					<h2 class="text-4xl font-semibold uppercase">Heladas</h2>
 					<div class="flex justify-end gap-4">
-						<p class="mb-4 min-w-16 text-end text-2xl font-light">12oz</p>
 						<p class="mb-4 min-w-16 text-end text-2xl font-light">16oz</p>
+						<p class="mb-4 min-w-16 text-end text-2xl font-light">20oz</p>
 					</div>
 					<ul class="flex flex-col gap-4">
 						{
@@ -80,7 +87,7 @@ import drinksData from './drinksData.json'
 											${drinksData.heladas[drink].prices.small}
 										</p>
 										<p class="min-w-16 text-end text-2xl">
-											${drinksData.heladas[drink].prices.small}
+											${drinksData.heladas[drink].prices.large}
 										</p>
 									</div>
 								</li>
@@ -93,24 +100,24 @@ import drinksData from './drinksData.json'
 			<div
 				class="lg:mb-page mb-page-mobile md:mb-page-tablet grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8"
 			>
-				<Image src={frappes} alt="Bebidas" class="w-full rounded-3xl object-cover" />
+				<Image src={frappes} alt="Bebidas" class="max-h-[35rem] w-full rounded-3xl object-cover" />
 				<div>
 					<h2 class="text-4xl font-semibold uppercase">Frappés</h2>
 					<div class="flex justify-end gap-4">
-						<p class="mb-4 min-w-16 text-end text-2xl font-light">12oz</p>
 						<p class="mb-4 min-w-16 text-end text-2xl font-light">16oz</p>
+						<p class="mb-4 min-w-16 text-end text-2xl font-light">20oz</p>
 					</div>
 					<ul class="flex flex-col gap-4">
 						{
-							Object.keys(drinksData.heladas).map((drink) => (
+							Object.keys(drinksData.frappes).map((drink) => (
 								<li class="flex items-center justify-between gap-4">
-									<p class="text-end text-2xl">{drinksData.heladas[drink].name}</p>
+									<p class="text-end text-2xl">{drinksData.frappes[drink].name}</p>
 									<div class="flex gap-4">
 										<p class="min-w-16 text-end text-2xl">
-											${drinksData.heladas[drink].prices.small}
+											${drinksData.frappes[drink].prices.small}
 										</p>
 										<p class="min-w-16 text-end text-2xl">
-											${drinksData.heladas[drink].prices.small}
+											${drinksData.frappes[drink].prices.large}
 										</p>
 									</div>
 								</li>
@@ -127,20 +134,42 @@ import drinksData from './drinksData.json'
 				<div>
 					<h2 class="mb-4 text-4xl font-semibold uppercase">Refreshments</h2>
 					<ul class="flex flex-col gap-4">
+						<!-- Refreshments Normales -->
 						{
-							Object.keys(drinksData.heladas).map((drink) => (
-								<li class="flex items-center justify-between gap-4">
-									<p class="text-end text-2xl">{drinksData.heladas[drink].name}</p>
-									<div class="flex gap-4">
-										<p class="min-w-16 text-end text-2xl">
-											${drinksData.heladas[drink].prices.small}
-										</p>
-										<p class="min-w-16 text-end text-2xl">
-											${drinksData.heladas[drink].prices.small}
-										</p>
-									</div>
-								</li>
-							))
+							Object.keys(drinksData.refreshments).map((drink) => {
+								if (!drinksData.refreshments[drink].special) {
+									return (
+										<li class="flex items-center justify-between gap-4">
+											<p class="text-end text-2xl">{drinksData.refreshments[drink].name}</p>
+											<div class="flex gap-4">
+												<p class="min-w-16 text-end text-2xl">
+													${drinksData.refreshments[drink].price}
+												</p>
+											</div>
+										</li>
+									)
+								}
+							})
+						}
+						<!-- Refreshments Especiales -->
+						<div class="flex justify-end gap-4">
+							<p class="mb-4 min-w-16 text-end text-2xl font-light">20oz</p>
+						</div>
+						{
+							Object.keys(drinksData.refreshments).map((drink) => {
+								if (drinksData.refreshments[drink].special) {
+									return (
+										<li class="flex items-center justify-between gap-4">
+											<p class="text-end text-2xl">{drinksData.refreshments[drink].name}</p>
+											<div class="flex gap-4">
+												<p class="min-w-16 text-end text-2xl">
+													${drinksData.refreshments[drink].price}
+												</p>
+											</div>
+										</li>
+									)
+								}
+							})
 						}
 					</ul>
 					<h2 class="mt-8 text-4xl font-semibold uppercase">Malteadas</h2>
@@ -149,16 +178,11 @@ import drinksData from './drinksData.json'
 					</div>
 					<ul class="flex flex-col gap-4">
 						{
-							Object.keys(drinksData.heladas).map((drink) => (
+							Object.keys(drinksData.malteadas).map((drink) => (
 								<li class="flex items-center justify-between gap-4">
-									<p class="text-end text-2xl">{drinksData.heladas[drink].name}</p>
+									<p class="text-end text-2xl">{drinksData.malteadas[drink].name}</p>
 									<div class="flex gap-4">
-										<p class="min-w-16 text-end text-2xl">
-											${drinksData.heladas[drink].prices.small}
-										</p>
-										<p class="min-w-16 text-end text-2xl">
-											${drinksData.heladas[drink].prices.small}
-										</p>
+										<p class="min-w-16 text-end text-2xl">${drinksData.malteadas[drink].price}</p>
 									</div>
 								</li>
 							))

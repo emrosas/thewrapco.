@@ -99,6 +99,166 @@
 				"small": 59,
 				"large": 69
 			}
+		},
+		"latte": {
+			"name": "Latte",
+			"prices": {
+				"small": 78,
+				"large": 88
+			}
+		},
+		"cappuccino": {
+			"name": "Cappuccino",
+			"prices": {
+				"small": 78,
+				"large": 88
+			}
+		},
+		"dirtyChai": {
+			"name": "Dirty Chai",
+			"prices": {
+				"small": 94,
+				"large": 104
+			}
+		},
+		"caramelLatte": {
+			"name": "Caramel Latte",
+			"prices": {
+				"small": 84,
+				"large": 94
+			}
+		},
+		"vanillaLatte": {
+			"name": "Vanilla Latte",
+			"prices": {
+				"small": 84,
+				"large": 94
+			}
+		},
+		"mocha": {
+			"name": "Mocha",
+			"prices": {
+				"small": 91,
+				"large": 101
+			}
+		},
+		"chaiLatte": {
+			"name": "Chai Latte",
+			"prices": {
+				"small": 91,
+				"large": 101
+			}
+		},
+		"matchaLatte": {
+			"name": "Matcha Latte",
+			"prices": {
+				"small": 91,
+				"large": 101
+			}
+		},
+		"taro": {
+			"name": "Taro",
+			"prices": {
+				"small": 91,
+				"large": 101
+			}
+		},
+		"chocolate": {
+			"name": "Chocolate",
+			"prices": {
+				"small": 84,
+				"large": 94
+			}
+		}
+	},
+	"frappes": {
+		"cafeFrappe": {
+			"name": "Café Frappé",
+			"prices": {
+				"small": 87,
+				"large": 97
+			}
+		},
+		"caramelFrappe": {
+			"name": "Caramel Frappé",
+			"prices": {
+				"small": 87,
+				"large": 97
+			}
+		},
+		"mochaFrappe": {
+			"name": "Mocha Frappé",
+			"prices": {
+				"small": 94,
+				"large": 104
+			}
+		},
+		"matchaFrappe": {
+			"name": "Matcha Frappé",
+			"prices": {
+				"small": 94,
+				"large": 104
+			}
+		},
+		"taroFrappe": {
+			"name": "Taro Frappé",
+			"prices": {
+				"small": 94,
+				"large": 104
+			}
+		},
+		"chaiFrappe": {
+			"name": "Chai Frappé",
+			"prices": {
+				"small": 94,
+				"large": 104
+			}
+		}
+	},
+	"malteadas": {
+		"vainilla": {
+			"name": "Vainilla",
+			"price": 118
+		},
+		"chocolate": {
+			"name": "Chocolate",
+			"price": 118
+		},
+		"fresa": {
+			"name": "Fresa",
+			"price": 118
+		}
+	},
+	"refreshments": {
+		"cocaCola": {
+			"name": "Coca Cola",
+			"price": 39,
+			"special": false
+		},
+		"cocaColaLight": {
+			"name": "Coca Cola Light",
+			"price": 39,
+			"special": false
+		},
+		"topoChico": {
+			"name": "Topo Chico",
+			"price": 39,
+			"special": false
+		},
+		"agua": {
+			"name": "Agua",
+			"price": 39,
+			"special": false
+		},
+		"aguaDelDia": {
+			"name": "Agua del Día",
+			"price": 59,
+			"special": true
+		},
+		"sodaItaliana": {
+			"name": "Soda Italiana",
+			"price": 69,
+			"special": true
 		}
 	}
 }
