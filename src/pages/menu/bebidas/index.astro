@@ -3,6 +3,7 @@ import Layout from '../../../layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 import MenuNavbar from '../../../components/MenuNavbar.astro'
+import calientes from '../../../assets/bebidas/calientes.png'
 ---
 
 <Layout>
@@ -17,5 +18,10 @@ import MenuNavbar from '../../../components/MenuNavbar.astro'
 				<Icon name={'food/bebida'} size={80} />
 			</div>
 		</header>
+		<section class="px-page-mobile py-12 md:px-page-tablet lg:px-page">
+			<div class="grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8">
+				<Image src={calientes} alt="Bebidas" class="w-full rounded-3xl object-cover" />
+			</div>
+		</section>
 	</main>
 </Layout>

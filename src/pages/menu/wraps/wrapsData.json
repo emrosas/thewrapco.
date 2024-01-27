@@ -23,7 +23,7 @@
 	},
 	"bbq": {
 		"name": "BBQ Chicken",
-		"description": "Wrap envuelto en tortilla de harina, con frijoles, arroz, queso manchego artesanal, pechuga de pollo (100 gr) bañada en salsa BBQ.",
+		"description": "Wrap envuelto en tortilla de harina, con frijoles, arroz, queso manchego artesanal, pechuga de pollo a la plancha (100 gr) bañada en salsa BBQ.",
 		"price": 175,
 		"image": {
 			"src": "/images/bbq.png",
@@ -41,7 +41,7 @@
 			"alt": "Nuestro wrap Poblano"
 		},
 		"spicy": false,
-		"morning": false
+		"morning": true
 	},
 	"meat": {
 		"name": "Meat Fajitas",
@@ -73,7 +73,7 @@
 			"src": "/images/chicken-salad.png",
 			"alt": "Nuestro Chicken Salad Wrap"
 		},
-		"spicy": true,
+		"spicy": false,
 		"morning": false
 	},
 	"mañanero": {

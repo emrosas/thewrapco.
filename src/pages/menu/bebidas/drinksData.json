@@ -1,0 +1,95 @@
+{
+	"Calientes": {
+		"espressoSencillo": {
+			"name": "Espresso Sencillo",
+			"prices": {
+				"small": 49,
+				"large": 0
+			}
+		},
+		"espressoDoble": {
+			"name": "Espresso Doble",
+			"prices": {
+				"small": 58,
+				"large": 0
+			}
+		},
+		"cafeDelDia": {
+			"name": "Café del Día",
+			"prices": {
+				"small": 49,
+				"large": 59
+			}
+		},
+		"latte": {
+			"name": "Latte",
+			"prices": {
+				"small": 68,
+				"large": 78
+			}
+		},
+		"cappuccino": {
+			"name": "Cappuccino",
+			"prices": {
+				"small": 68,
+				"large": 78
+			}
+		},
+		"flatWhite": {
+			"name": "Flat White",
+			"prices": {
+				"small": 68,
+				"large": 78
+			}
+		},
+		"dirtyChai": {
+			"name": "Dirty Chai",
+			"prices": {
+				"small": 84,
+				"large": 94
+			}
+		},
+		"caramelLatte": {
+			"name": "Caramel Latte",
+			"prices": {
+				"small": 74,
+				"large": 84
+			}
+		},
+		"vanillaLatte": {
+			"name": "Vanilla Latte",
+			"prices": {
+				"small": 74,
+				"large": 84
+			}
+		},
+		"mocha": {
+			"name": "Mocha",
+			"prices": {
+				"small": 81,
+				"large": 91
+			}
+		},
+		"matchaLatte": {
+			"name": "Matcha Latte",
+			"prices": {
+				"small": 81,
+				"large": 91
+			}
+		},
+		"taro": {
+			"name": "Taro",
+			"prices": {
+				"small": 81,
+				"large": 91
+			}
+		},
+		"chocolate": {
+			"name": "Chocolate",
+			"prices": {
+				"small": 74,
+				"large": 84
+			}
+		}
+	}
+}
