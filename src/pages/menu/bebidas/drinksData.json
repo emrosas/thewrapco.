@@ -1,5 +1,5 @@
 {
-	"Calientes": {
+	"calientes": {
 		"espressoSencillo": {
 			"name": "Espresso Sencillo",
 			"prices": {
@@ -89,6 +89,15 @@
 			"prices": {
 				"small": 74,
 				"large": 84
+			}
+		}
+	},
+	"heladas": {
+		"americano": {
+			"name": "Americano",
+			"prices": {
+				"small": 59,
+				"large": 69
 			}
 		}
 	}

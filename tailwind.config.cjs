@@ -21,6 +21,11 @@ module.exports = {
 				'page-tablet': '2rem',
 				'page-mobile': '1rem'
 			},
+			margin: {
+				page: '3rem',
+				'page-tablet': '2rem',
+				'page-mobile': '1rem'
+			},
 			colors: {
 				'dark-1': '#343B2B',
 				'dark-2': '#3F4D2D',

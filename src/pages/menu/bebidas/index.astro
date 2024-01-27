@@ -1,12 +1,22 @@
 ---
+//Component imports
 import Layout from '../../../layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 import MenuNavbar from '../../../components/MenuNavbar.astro'
+//Image imports
 import calientes from '../../../assets/bebidas/calientes.png'
+import heladas from '../../../assets/bebidas/heladas.png'
+import frappes from '../../../assets/bebidas/frappes.png'
+import refreshments from '../../../assets/bebidas/refreshments.png'
+//Data imports
+import drinksData from './drinksData.json'
 ---
 
-<Layout>
+<Layout
+	title="Bebidas"
+	description="Explora nuestro menú de bebidas, ideales para cualquier ocasión."
+>
 	<MenuNavbar />
 	<main class="pb-24 pt-32">
 		<header
@@ -19,8 +29,142 @@ import calientes from '../../../assets/bebidas/calientes.png'
 			</div>
 		</header>
 		<section class="px-page-mobile py-12 md:px-page-tablet lg:px-page">
-			<div class="grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8">
+			<!-- CALIENTES -->
+			<div
+				class="lg:mb-page mb-page-mobile md:mb-page-tablet grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8"
+			>
 				<Image src={calientes} alt="Bebidas" class="w-full rounded-3xl object-cover" />
+				<div>
+					<h2 class="text-4xl font-semibold uppercase">Calientes</h2>
+					<div class="flex justify-end gap-4">
+						<p class="mb-4 min-w-16 text-end text-2xl font-light">12oz</p>
+						<p class="mb-4 min-w-16 text-end text-2xl font-light">16oz</p>
+					</div>
+					<ul class="flex flex-col gap-4">
+						{
+							Object.keys(drinksData.calientes).map((drink) => (
+								<li class="flex items-center justify-between gap-4">
+									<p class="text-end text-2xl">{drinksData.calientes[drink].name}</p>
+									<div class="flex gap-4">
+										<p class="min-w-16 text-end text-2xl">
+											${drinksData.calientes[drink].prices.small}
+										</p>
+										<p class="min-w-16 text-end text-2xl">
+											${drinksData.calientes[drink].prices.small}
+										</p>
+									</div>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</div>
+			<!-- HELADAS -->
+			<div
+				class="lg:mb-page mb-page-mobile md:mb-page-tablet grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8"
+			>
+				<Image src={heladas} alt="Bebidas" class="w-full rounded-3xl object-cover" />
+				<div>
+					<h2 class="text-4xl font-semibold uppercase">Heladas</h2>
+					<div class="flex justify-end gap-4">
+						<p class="mb-4 min-w-16 text-end text-2xl font-light">12oz</p>
+						<p class="mb-4 min-w-16 text-end text-2xl font-light">16oz</p>
+					</div>
+					<ul class="flex flex-col gap-4">
+						{
+							Object.keys(drinksData.heladas).map((drink) => (
+								<li class="flex items-center justify-between gap-4">
+									<p class="text-end text-2xl">{drinksData.heladas[drink].name}</p>
+									<div class="flex gap-4">
+										<p class="min-w-16 text-end text-2xl">
+											${drinksData.heladas[drink].prices.small}
+										</p>
+										<p class="min-w-16 text-end text-2xl">
+											${drinksData.heladas[drink].prices.small}
+										</p>
+									</div>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</div>
+			<!-- FRAPPÉS -->
+			<div
+				class="lg:mb-page mb-page-mobile md:mb-page-tablet grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8"
+			>
+				<Image src={frappes} alt="Bebidas" class="w-full rounded-3xl object-cover" />
+				<div>
+					<h2 class="text-4xl font-semibold uppercase">Frappés</h2>
+					<div class="flex justify-end gap-4">
+						<p class="mb-4 min-w-16 text-end text-2xl font-light">12oz</p>
+						<p class="mb-4 min-w-16 text-end text-2xl font-light">16oz</p>
+					</div>
+					<ul class="flex flex-col gap-4">
+						{
+							Object.keys(drinksData.heladas).map((drink) => (
+								<li class="flex items-center justify-between gap-4">
+									<p class="text-end text-2xl">{drinksData.heladas[drink].name}</p>
+									<div class="flex gap-4">
+										<p class="min-w-16 text-end text-2xl">
+											${drinksData.heladas[drink].prices.small}
+										</p>
+										<p class="min-w-16 text-end text-2xl">
+											${drinksData.heladas[drink].prices.small}
+										</p>
+									</div>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</div>
+			<!-- REFRESHMENTS & MALTEADAS -->
+			<div
+				class="lg:mb-page mb-page-mobile md:mb-page-tablet grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8"
+			>
+				<Image src={refreshments} alt="Bebidas" class="w-full rounded-3xl object-cover" />
+				<div>
+					<h2 class="mb-4 text-4xl font-semibold uppercase">Refreshments</h2>
+					<ul class="flex flex-col gap-4">
+						{
+							Object.keys(drinksData.heladas).map((drink) => (
+								<li class="flex items-center justify-between gap-4">
+									<p class="text-end text-2xl">{drinksData.heladas[drink].name}</p>
+									<div class="flex gap-4">
+										<p class="min-w-16 text-end text-2xl">
+											${drinksData.heladas[drink].prices.small}
+										</p>
+										<p class="min-w-16 text-end text-2xl">
+											${drinksData.heladas[drink].prices.small}
+										</p>
+									</div>
+								</li>
+							))
+						}
+					</ul>
+					<h2 class="mt-8 text-4xl font-semibold uppercase">Malteadas</h2>
+					<div class="flex justify-end gap-4">
+						<p class="mb-4 min-w-16 text-end text-2xl font-light">20oz</p>
+					</div>
+					<ul class="flex flex-col gap-4">
+						{
+							Object.keys(drinksData.heladas).map((drink) => (
+								<li class="flex items-center justify-between gap-4">
+									<p class="text-end text-2xl">{drinksData.heladas[drink].name}</p>
+									<div class="flex gap-4">
+										<p class="min-w-16 text-end text-2xl">
+											${drinksData.heladas[drink].prices.small}
+										</p>
+										<p class="min-w-16 text-end text-2xl">
+											${drinksData.heladas[drink].prices.small}
+										</p>
+									</div>
+								</li>
+							))
+						}
+					</ul>
+				</div>
 			</div>
 		</section>
 	</main>
