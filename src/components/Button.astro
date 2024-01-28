@@ -2,21 +2,36 @@
 interface Props {
 	href: string
 	text: string
-	mode?: 'primary' | 'secondary'
+	mode?: 'primary' | 'secondary' | 'tertiary'
 }
 
 import { Icon } from 'astro-icon/components'
 
 const { href, text, mode = 'primary' } = Astro.props
-const primaryMode = 'bg-dark-3 text-light-1'
+const primaryMode = 'bg-brand-2 text-light-1'
 const secondaryMode = 'bg-light-2 text-dark-3'
+const tertiaryMode = 'bg-brand-3 text-light-1'
+let selectedMode = ''
+
+switch (mode) {
+	case 'primary':
+		selectedMode = primaryMode
+		break
+	case 'secondary':
+		selectedMode = secondaryMode
+		break
+	case 'tertiary':
+		selectedMode = tertiaryMode
+		break
+	default:
+		selectedMode = primaryMode
+		break
+}
 ---
 
 <a
 	href={href}
-	class={`flex gap-2 mt-4 items-center px-4 py-2 rounded-full border-2 border-transparent hover:-translate-y-1 transition-transform hover:shadow-sm hover:border-brand-2 ${
-		mode == 'primary' ? primaryMode : secondaryMode
-	}`}
+	class={`flex gap-2 mt-4 items-center px-4 py-2 rounded-full border-2 border-transparent hover:-translate-y-1 transition-transform hover:shadow-sm hover:border-brand-2 ${selectedMode}`}
 	>{text}
 	<Icon name="info/arrow" class="h-6 w-6" />
 </a>

@@ -13,6 +13,9 @@ module.exports = {
 				extrawide: '1rem',
 				superwide: '2.25rem'
 			},
+			backgroundImage: {
+				'conic-gradient': 'conic-gradient(from 180deg at 50% 80%, #FFD699 0deg, #F9E9C8 360deg)'
+			},
 			fontSize: {
 				'10xl': ['10rem', '90%']
 			},
@@ -32,6 +35,7 @@ module.exports = {
 				'dark-3': '#884415',
 				'brand-1': '#C6C66C',
 				'brand-2': '#DB8152',
+				'brand-3': '#FF9729',
 				'light-1': '#FBFBF9',
 				'light-2': '#FFD699',
 				'light-3': '#EAEA7B'

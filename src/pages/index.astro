@@ -5,9 +5,11 @@ import { Icon } from 'astro-icon/components'
 import Layout from '../layouts/Layout.astro'
 import Button from '../components/Button.astro'
 import FAQ from '../components/FAQ.jsx'
+import LottieAnimation from 'astro-integration-lottie/Lottie.astro'
 
 //Asset imports
 import bbqWrap from '../assets/home/bbq-wrap.png'
+import headerImage from '../assets/home/header.png'
 import drink from '../assets/home/drink.png'
 import reviews from '../reviews.json'
 ---
@@ -17,8 +19,49 @@ import reviews from '../reviews.json'
 	description="Deliciosos Wraps artesanales y café nacional para acompañar tu día."
 >
 	<main class="overflow-x-hidden">
-		<header class="h-screen bg-light-2 px-page-mobile pb-24 pt-32 md:px-page-tablet lg:px-page">
-			<h1>Welcome to flavortown!</h1>
+		<header class="relative px-page-mobile pt-40 md:px-page-tablet lg:px-page">
+			<div class="grid flex-grow grid-cols-12 grid-rows-none text-balance">
+				<div
+					id="header-comp"
+					class="gap-4u col-start-1 col-end-5 row-start-1 flex flex-col items-start"
+				>
+					<h1 class="text-4xl font-semibold leading-snug">
+						<span class="relative z-10"
+							>Envuelve <Icon
+								name={'info/squigglyUnderline'}
+								class="absolute -left-2 bottom-0 -z-10 w-[105%] text-brand-2"
+							/></span
+						>
+						 tu dia con combinaciones de sabor únicas
+					</h1>
+					<Button text="Ver Menú" mode="tertiary" href="/menu/wraps/" />
+				</div>
+				<Image
+					class="col-span-8 col-start-3 row-start-1 object-cover"
+					src={headerImage}
+					alt="Wrap Clásico con un Mocha Frappé."
+				/>
+				<div class="col-span-3 col-start-10 row-start-1 pt-8">
+					<Icon
+						name={'info/accentStar'}
+						class="left-0 top-0 h-8 w-8 -translate-x-full text-brand-2"
+					/>
+					<p class="text-xl">
+						Descubre nuestra <b>deliciosa variedad de wraps</b>, chapatas, pan dulce y café que
+						acompañaran a tu día de manera perfecta.
+					</p>
+				</div>
+			</div>
+			<div id="header-bg" class="bg-conic-gradient absolute left-0 right-0 top-0 -z-10 h-screen">
+				<div
+					id="badge-animation"
+					class="absolute bottom-0 left-0 pb-20 md:pl-page-tablet lg:pl-page"
+				>
+					<div class="h-32 w-32">
+						<LottieAnimation src="/images/xp-badge.json" autoplay={true} loop={true} />
+					</div>
+				</div>
+			</div>
 		</header>
 		<!-- Features Section -->
 		<section class="px-page-mobile py-32 md:px-page-tablet lg:px-page">

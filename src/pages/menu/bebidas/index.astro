@@ -23,20 +23,20 @@ Object.keys(drinksData.refreshments).forEach((drink) => {
 	description="Explora nuestro menú de bebidas, ideales para cualquier ocasión."
 >
 	<MenuNavbar />
-	<main class="pb-24 pt-32">
+	<main class="pb-24 pt-40">
 		<header
 			class="flex flex-col justify-between gap-8 px-page-mobile sm:flex-row sm:items-center md:px-page-tablet lg:px-page"
 		>
 			<!-- Section title -->
 			<div class="flex items-center gap-4">
-				<h1 class="text-6xl md:text-8xl">Bebidas</h1>
+				<h1 class="text-6xl font-semibold uppercase md:text-8xl">Bebidas</h1>
 				<Icon name={'food/bebida'} size={80} />
 			</div>
 		</header>
 		<section class="px-page-mobile py-12 md:px-page-tablet lg:px-page">
 			<!-- CALIENTES -->
 			<div
-				class="lg:mb-page mb-page-mobile md:mb-page-tablet grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8"
+				class="mb-page-mobile grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8 md:mb-page-tablet lg:mb-page"
 			>
 				<Image src={calientes} alt="Bebidas" class="w-full rounded-3xl object-cover" />
 				<div>
@@ -68,7 +68,7 @@ Object.keys(drinksData.refreshments).forEach((drink) => {
 			</div>
 			<!-- HELADAS -->
 			<div
-				class="lg:mb-page mb-page-mobile md:mb-page-tablet grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8"
+				class="mb-page-mobile grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8 md:mb-page-tablet lg:mb-page"
 			>
 				<Image src={heladas} alt="Bebidas" class="w-full rounded-3xl object-cover" />
 				<div>
@@ -98,7 +98,7 @@ Object.keys(drinksData.refreshments).forEach((drink) => {
 			</div>
 			<!-- FRAPPÉS -->
 			<div
-				class="lg:mb-page mb-page-mobile md:mb-page-tablet grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8"
+				class="mb-page-mobile grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8 md:mb-page-tablet lg:mb-page"
 			>
 				<Image src={frappes} alt="Bebidas" class="max-h-[35rem] w-full rounded-3xl object-cover" />
 				<div>
@@ -128,7 +128,7 @@ Object.keys(drinksData.refreshments).forEach((drink) => {
 			</div>
 			<!-- REFRESHMENTS & MALTEADAS -->
 			<div
-				class="lg:mb-page mb-page-mobile md:mb-page-tablet grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8"
+				class="mb-page-mobile grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8 md:mb-page-tablet lg:mb-page"
 			>
 				<Image src={refreshments} alt="Bebidas" class="w-full rounded-3xl object-cover" />
 				<div>
