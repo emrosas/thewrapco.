@@ -23,38 +23,42 @@ Object.keys(drinksData.refreshments).forEach((drink) => {
 	description="Explora nuestro menú de bebidas, ideales para cualquier ocasión."
 >
 	<MenuNavbar />
-	<main class="pb-24 pt-40">
+	<main class="pb-16 pt-32 md:pb-24 md:pt-40">
 		<header
 			class="flex flex-col justify-between gap-8 px-page-mobile sm:flex-row sm:items-center md:px-page-tablet lg:px-page"
 		>
 			<!-- Section title -->
-			<div class="flex items-center gap-4">
+			<div class="flex items-center gap-2 md:gap-4">
 				<h1 class="text-6xl font-semibold uppercase md:text-8xl">Bebidas</h1>
-				<Icon name={'food/bebida'} size={80} />
+				<Icon name={'food/bebida'} class="h-12 w-12 md:h-20 md:w-20" />
 			</div>
 		</header>
 		<section class="px-page-mobile py-12 md:px-page-tablet lg:px-page">
 			<!-- CALIENTES -->
 			<div
-				class="mb-page-mobile grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8 md:mb-page-tablet lg:mb-page"
+				class="mb-page-mobile grid gap-4 rounded-3xl bg-light-2 p-4 md:mb-page-tablet md:grid-cols-2 md:gap-8 md:rounded-[3rem] md:p-8 lg:mb-page"
 			>
-				<Image src={calientes} alt="Bebidas" class="w-full rounded-3xl object-cover" />
+				<Image
+					src={calientes}
+					alt="Bebidas"
+					class="h-full w-full rounded-xl object-cover md:rounded-3xl"
+				/>
 				<div>
-					<h2 class="text-4xl font-semibold uppercase">Calientes</h2>
+					<h2 class="text-2xl font-semibold uppercase md:text-4xl">Calientes</h2>
 					<div class="flex justify-end gap-4">
-						<p class="mb-4 min-w-16 text-end text-2xl font-light">12oz</p>
-						<p class="mb-4 min-w-16 text-end text-2xl font-light">16oz</p>
+						<p class="mb-4 min-w-16 text-end text-lg font-light md:text-2xl">12oz</p>
+						<p class="mb-4 min-w-16 text-end text-lg font-light md:text-2xl">16oz</p>
 					</div>
-					<ul class="flex flex-col gap-4">
+					<ul class="flex flex-col gap-2 md:gap-4">
 						{
 							Object.keys(drinksData.calientes).map((drink) => (
 								<li class="flex items-center justify-between gap-4">
-									<p class="text-end text-2xl">{drinksData.calientes[drink].name}</p>
+									<p class="text-lg md:text-2xl">{drinksData.calientes[drink].name}</p>
 									<div class="flex gap-4">
-										<p class="min-w-16 text-end text-2xl">
+										<p class="min-w-16 text-end text-lg md:text-2xl">
 											${drinksData.calientes[drink].prices.small}
 										</p>
-										<p class="min-w-16 text-end text-2xl">
+										<p class="min-w-16 text-end text-lg md:text-2xl">
 											{drinksData.calientes[drink].prices.large === 0
 												? '-'
 												: '$' + drinksData.calientes[drink].prices.large}
@@ -68,25 +72,29 @@ Object.keys(drinksData.refreshments).forEach((drink) => {
 			</div>
 			<!-- HELADAS -->
 			<div
-				class="mb-page-mobile grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8 md:mb-page-tablet lg:mb-page"
+				class="mb-page-mobile grid gap-4 rounded-3xl bg-light-2 p-4 md:mb-page-tablet md:grid-cols-2 md:gap-8 md:rounded-[3rem] md:p-8 lg:mb-page"
 			>
-				<Image src={heladas} alt="Bebidas" class="w-full rounded-3xl object-cover" />
+				<Image
+					src={heladas}
+					alt="Bebidas"
+					class="h-full w-full rounded-xl object-cover md:rounded-3xl"
+				/>
 				<div>
-					<h2 class="text-4xl font-semibold uppercase">Heladas</h2>
+					<h2 class="text-2xl font-semibold uppercase md:text-4xl">Heladas</h2>
 					<div class="flex justify-end gap-4">
-						<p class="mb-4 min-w-16 text-end text-2xl font-light">16oz</p>
-						<p class="mb-4 min-w-16 text-end text-2xl font-light">20oz</p>
+						<p class="mb-4 min-w-16 text-end text-lg font-light md:text-2xl">16oz</p>
+						<p class="mb-4 min-w-16 text-end text-lg font-light md:text-2xl">20oz</p>
 					</div>
-					<ul class="flex flex-col gap-4">
+					<ul class="flex flex-col gap-2 md:gap-4">
 						{
 							Object.keys(drinksData.heladas).map((drink) => (
 								<li class="flex items-center justify-between gap-4">
-									<p class="text-end text-2xl">{drinksData.heladas[drink].name}</p>
+									<p class="text-lg md:text-2xl">{drinksData.heladas[drink].name}</p>
 									<div class="flex gap-4">
-										<p class="min-w-16 text-end text-2xl">
+										<p class="min-w-16 text-end text-lg md:text-2xl">
 											${drinksData.heladas[drink].prices.small}
 										</p>
-										<p class="min-w-16 text-end text-2xl">
+										<p class="min-w-16 text-end text-lg md:text-2xl">
 											${drinksData.heladas[drink].prices.large}
 										</p>
 									</div>
@@ -98,25 +106,29 @@ Object.keys(drinksData.refreshments).forEach((drink) => {
 			</div>
 			<!-- FRAPPÉS -->
 			<div
-				class="mb-page-mobile grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8 md:mb-page-tablet lg:mb-page"
+				class="mb-page-mobile grid gap-4 rounded-3xl bg-light-2 p-4 md:mb-page-tablet md:grid-cols-2 md:gap-8 md:rounded-[3rem] md:p-8 lg:mb-page"
 			>
-				<Image src={frappes} alt="Bebidas" class="max-h-[35rem] w-full rounded-3xl object-cover" />
+				<Image
+					src={frappes}
+					alt="Bebidas"
+					class="h-full max-h-[35rem] w-full rounded-3xl object-cover"
+				/>
 				<div>
-					<h2 class="text-4xl font-semibold uppercase">Frappés</h2>
+					<h2 class="text-2xl font-semibold uppercase md:text-4xl">Frappés</h2>
 					<div class="flex justify-end gap-4">
-						<p class="mb-4 min-w-16 text-end text-2xl font-light">16oz</p>
-						<p class="mb-4 min-w-16 text-end text-2xl font-light">20oz</p>
+						<p class="mb-4 min-w-16 text-end text-lg font-light md:text-2xl">16oz</p>
+						<p class="mb-4 min-w-16 text-end text-lg font-light md:text-2xl">20oz</p>
 					</div>
-					<ul class="flex flex-col gap-4">
+					<ul class="flex flex-col gap-2 md:gap-4">
 						{
 							Object.keys(drinksData.frappes).map((drink) => (
 								<li class="flex items-center justify-between gap-4">
-									<p class="text-end text-2xl">{drinksData.frappes[drink].name}</p>
+									<p class="text-lg md:text-2xl">{drinksData.frappes[drink].name}</p>
 									<div class="flex gap-4">
-										<p class="min-w-16 text-end text-2xl">
+										<p class="min-w-16 text-end text-lg md:text-2xl">
 											${drinksData.frappes[drink].prices.small}
 										</p>
-										<p class="min-w-16 text-end text-2xl">
+										<p class="min-w-16 text-end text-lg md:text-2xl">
 											${drinksData.frappes[drink].prices.large}
 										</p>
 									</div>
@@ -128,21 +140,25 @@ Object.keys(drinksData.refreshments).forEach((drink) => {
 			</div>
 			<!-- REFRESHMENTS & MALTEADAS -->
 			<div
-				class="mb-page-mobile grid grid-cols-2 gap-8 rounded-[3rem] bg-light-2 p-8 md:mb-page-tablet lg:mb-page"
+				class="mb-page-mobile grid gap-4 rounded-3xl bg-light-2 p-4 md:mb-page-tablet md:grid-cols-2 md:gap-8 md:rounded-[3rem] md:p-8 lg:mb-page"
 			>
-				<Image src={refreshments} alt="Bebidas" class="w-full rounded-3xl object-cover" />
+				<Image
+					src={refreshments}
+					alt="Bebidas"
+					class="h-full w-full rounded-xl object-cover md:rounded-3xl"
+				/>
 				<div>
-					<h2 class="mb-4 text-4xl font-semibold uppercase">Refreshments</h2>
-					<ul class="flex flex-col gap-4">
+					<h2 class="mb-4 text-2xl font-semibold uppercase md:text-4xl">Refreshments</h2>
+					<ul class="flex flex-col gap-2 md:gap-4">
 						<!-- Refreshments Normales -->
 						{
 							Object.keys(drinksData.refreshments).map((drink) => {
 								if (!drinksData.refreshments[drink].special) {
 									return (
 										<li class="flex items-center justify-between gap-4">
-											<p class="text-end text-2xl">{drinksData.refreshments[drink].name}</p>
+											<p class="text-lg md:text-2xl">{drinksData.refreshments[drink].name}</p>
 											<div class="flex gap-4">
-												<p class="min-w-16 text-end text-2xl">
+												<p class="min-w-16 text-end text-lg md:text-2xl">
 													${drinksData.refreshments[drink].price}
 												</p>
 											</div>
@@ -153,16 +169,16 @@ Object.keys(drinksData.refreshments).forEach((drink) => {
 						}
 						<!-- Refreshments Especiales -->
 						<div class="flex justify-end gap-4">
-							<p class="mb-4 min-w-16 text-end text-2xl font-light">20oz</p>
+							<p class="mb-4 min-w-16 text-end text-lg font-light md:text-2xl">20oz</p>
 						</div>
 						{
 							Object.keys(drinksData.refreshments).map((drink) => {
 								if (drinksData.refreshments[drink].special) {
 									return (
 										<li class="flex items-center justify-between gap-4">
-											<p class="text-end text-2xl">{drinksData.refreshments[drink].name}</p>
+											<p class="text-lg md:text-2xl">{drinksData.refreshments[drink].name}</p>
 											<div class="flex gap-4">
-												<p class="min-w-16 text-end text-2xl">
+												<p class="min-w-16 text-end text-lg md:text-2xl">
 													${drinksData.refreshments[drink].price}
 												</p>
 											</div>
@@ -172,17 +188,19 @@ Object.keys(drinksData.refreshments).forEach((drink) => {
 							})
 						}
 					</ul>
-					<h2 class="mt-8 text-4xl font-semibold uppercase">Malteadas</h2>
+					<h2 class="mt-8 text-2xl font-semibold uppercase md:text-4xl">Malteadas</h2>
 					<div class="flex justify-end gap-4">
-						<p class="mb-4 min-w-16 text-end text-2xl font-light">20oz</p>
+						<p class="mb-4 min-w-16 text-end text-lg font-light md:text-2xl">20oz</p>
 					</div>
-					<ul class="flex flex-col gap-4">
+					<ul class="flex flex-col gap-2 md:gap-4">
 						{
 							Object.keys(drinksData.malteadas).map((drink) => (
 								<li class="flex items-center justify-between gap-4">
-									<p class="text-end text-2xl">{drinksData.malteadas[drink].name}</p>
+									<p class="text-lg md:text-2xl">{drinksData.malteadas[drink].name}</p>
 									<div class="flex gap-4">
-										<p class="min-w-16 text-end text-2xl">${drinksData.malteadas[drink].price}</p>
+										<p class="min-w-16 text-end text-lg md:text-2xl">
+											${drinksData.malteadas[drink].price}
+										</p>
 									</div>
 								</li>
 							))
