@@ -25,10 +25,13 @@ import MenuNavbar from '../../../components/MenuNavbar.astro'
 			<!-- Icon explanations -->
 			<ul class="flex flex-col gap-4">
 				<li class="flex items-center gap-2">
-					<Icon name={'food/flame'} size={24} /><p>Producto Picante</p>
+					<Icon name={'food/flame'} class="h-6 w-6 text-brand-3" /><p>Producto Picante</p>
 				</li>
 				<li class="flex items-center gap-2">
-					<Icon name={'food/sun'} size={24} /><p>Ideal para Desayunar</p>
+					<Icon name={'food/sun'} class="h-6 w-6 text-brand-3" /><p>Ideal para Desayunar</p>
+				</li>
+				<li class="flex items-center gap-2">
+					<Icon name={'food/bowl'} class="h-6 w-6 text-brand-3" /><p>Make it a Bowl</p>
 				</li>
 			</ul>
 		</header>
@@ -48,8 +51,15 @@ import MenuNavbar from '../../../components/MenuNavbar.astro'
 									<div class="flex items-center justify-between">
 										<div class="flex items-center gap-2">
 											<h3 class="text-2xl font-semibold lg:text-3xl">{wrapsData[wrap].name}</h3>
-											{wrapsData[wrap].spicy && <Icon name={'food/flame'} size={24} />}
-											{wrapsData[wrap].morning && <Icon name={'food/sun'} size={24} />}
+											{wrapsData[wrap].spicy && (
+												<Icon name={'food/flame'} class="h-6 w-6 text-brand-3" />
+											)}
+											{wrapsData[wrap].morning && (
+												<Icon name={'food/sun'} class="h-6 w-6 text-brand-3" />
+											)}
+											{wrapsData[wrap].bowl && (
+												<Icon name={'food/bowl'} class="h-6 w-6 text-brand-3" />
+											)}
 										</div>
 										<h4 class="text-xl font-semibold lg:text-3xl">${wrapsData[wrap].price}</h4>
 									</div>

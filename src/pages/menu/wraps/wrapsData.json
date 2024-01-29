@@ -8,6 +8,7 @@
 			"alt": "Nuestro Wrap clásico"
 		},
 		"spicy": false,
+		"bowl": false,
 		"morning": true
 	},
 	"tuna": {
@@ -19,6 +20,7 @@
 			"alt": "Nuestro Tuna Wrap"
 		},
 		"spicy": false,
+		"bowl": true,
 		"morning": false
 	},
 	"bbq": {
@@ -30,6 +32,7 @@
 			"alt": "Nuestro Wrap BBQ Chicken"
 		},
 		"spicy": false,
+		"bowl": true,
 		"morning": false
 	},
 	"poblano": {
@@ -41,6 +44,7 @@
 			"alt": "Nuestro wrap Poblano"
 		},
 		"spicy": false,
+		"bowl": false,
 		"morning": true
 	},
 	"meat": {
@@ -52,6 +56,7 @@
 			"alt": "Nuestro Meat Fajitas Wrap"
 		},
 		"spicy": false,
+		"bowl": true,
 		"morning": false
 	},
 	"buffalo": {
@@ -63,6 +68,7 @@
 			"alt": "Nuestro Buffalo Chicken Wrap"
 		},
 		"spicy": true,
+		"bowl": true,
 		"morning": false
 	},
 	"chicken-salad": {
@@ -74,6 +80,7 @@
 			"alt": "Nuestro Chicken Salad Wrap"
 		},
 		"spicy": false,
+		"bowl": false,
 		"morning": false
 	},
 	"mañanero": {
@@ -85,6 +92,7 @@
 			"alt": "Nuestro Wrap Mañanero"
 		},
 		"spicy": false,
+		"bowl": false,
 		"morning": true
 	}
 }
