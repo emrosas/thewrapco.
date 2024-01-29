@@ -19,13 +19,17 @@ import reviews from '../reviews.json'
 	description="Deliciosos Wraps artesanales y café nacional para acompañar tu día."
 >
 	<main class="overflow-x-hidden">
-		<header class="relative px-page-mobile pt-40 md:px-page-tablet lg:px-page">
-			<div class="grid flex-grow grid-cols-12 grid-rows-none text-balance">
+		<header
+			class="relative h-auto bg-none px-page-mobile pt-32 sm:bg-conic-gradient sm:pt-40 md:bg-none md:px-page-tablet lg:px-page"
+		>
+			<div
+				class="grid flex-grow translate-y-0 justify-items-center text-balance sm:translate-y-16 sm:justify-items-start md:translate-y-0 md:grid-cols-12 md:grid-rows-none"
+			>
 				<div
 					id="header-comp"
-					class="gap-4u col-start-1 col-end-5 row-start-1 flex flex-col items-start"
+					class="row-start-1 flex flex-col items-start gap-0 sm:gap-4 md:col-span-4 md:col-start-1"
 				>
-					<h1 class="text-4xl font-semibold leading-snug">
+					<h1 class="text-3xl font-semibold leading-relaxed sm:text-4xl">
 						<span class="relative z-10"
 							>Envuelve <Icon
 								name={'info/squigglyUnderline'}
@@ -37,11 +41,11 @@ import reviews from '../reviews.json'
 					<Button text="Ver Menú" mode="tertiary" href="/menu/wraps/" />
 				</div>
 				<Image
-					class="col-span-8 col-start-3 row-start-1 object-cover"
+					class="row-start-3 max-w-[175%] -translate-y-12 object-cover sm:max-w-full sm:translate-y-0 md:col-span-8 md:col-start-3 md:row-start-1"
 					src={headerImage}
 					alt="Wrap Clásico con un Mocha Frappé."
 				/>
-				<div class="col-span-3 col-start-10 row-start-1 pt-8">
+				<div class="hidden pl-16 pt-8 sm:block md:col-span-3 md:col-start-10 md:row-start-1">
 					<Icon
 						name={'info/accentStar'}
 						class="left-0 top-0 h-8 w-8 -translate-x-full text-brand-2"
@@ -52,13 +56,21 @@ import reviews from '../reviews.json'
 					</p>
 				</div>
 			</div>
-			<div id="header-bg" class="bg-conic-gradient absolute left-0 right-0 top-0 -z-10 h-screen">
+			<div
+				id="header-bg"
+				class="absolute left-0 right-0 top-0 -z-10 h-screen bg-conic-gradient sm:bg-none md:bg-conic-gradient"
+			>
 				<div
 					id="badge-animation"
 					class="absolute bottom-0 left-0 pb-20 md:pl-page-tablet lg:pl-page"
 				>
-					<div class="h-32 w-32">
-						<LottieAnimation src="/images/xp-badge.json" autoplay={true} loop={true} />
+					<div class="hidden h-32 w-32 md:block">
+						<LottieAnimation
+							src="/images/xp-badge.json"
+							autoplay={true}
+							loop={true}
+							transition:persist
+						/>
 					</div>
 				</div>
 			</div>
@@ -66,11 +78,13 @@ import reviews from '../reviews.json'
 		<!-- Features Section -->
 		<section class="px-page-mobile py-32 md:px-page-tablet lg:px-page">
 			<div class="flex flex-col">
-				<h2 class="mx-auto mb-16 text-balance text-center text-3xl font-semibold leading-normal">
+				<h2
+					class="mx-auto mb-16 text-balance text-center text-2xl font-semibold leading-normal md:text-3xl"
+				>
 					Nuestra creciente pasión por ofrecer comida deliciosa nos impulsa cada día a mejorar
 					nuestros productos.
 				</h2>
-				<ul class="flex gap-8 text-light-1">
+				<ul class="flex flex-col gap-8 text-light-1 md:flex-row">
 					<li class="flex-grow rounded-3xl bg-brand-2 p-6">
 						<div class="mb-2 flex items-center gap-4">
 							<Icon name="food/coffee" size={36} /><h4 class="text-xl font-medium">
@@ -109,7 +123,7 @@ import reviews from '../reviews.json'
 		</section>
 		<!-- Main Differentiator Section -->
 		<section class="bg-dark-2 px-page-mobile py-20 text-light-3 md:px-page-tablet lg:px-page">
-			<div class="grid grid-cols-2 items-center gap-8">
+			<div class="grid items-center gap-8 md:grid-cols-2">
 				<div class="flex flex-col gap-4">
 					<h2 class="text-5xl font-semibold leading-tight">
 						Sección de distinción de marca principal
@@ -134,7 +148,7 @@ import reviews from '../reviews.json'
 		<section class="py-32">
 			<div class="flex flex-col">
 				<h2
-					class="mx-auto mb-16 max-w-[50ch] text-balance text-center text-3xl font-semibold leading-normal"
+					class="mx-auto mb-16 max-w-[50ch] px-page-mobile text-center text-2xl font-semibold leading-normal md:text-balance md:px-page-tablet md:text-3xl lg:px-page"
 				>
 					Escucha lo que dicen las personas que ya probaron nuestros wraps!
 				</h2>
@@ -143,7 +157,7 @@ import reviews from '../reviews.json'
 				>
 					{
 						Object.keys(reviews).map((review) => (
-							<li class="flex w-[30%] flex-shrink-0 flex-grow-0 snap-center flex-col gap-2">
+							<li class="flex w-[80%] flex-shrink-0 flex-grow-0 snap-center flex-col gap-2 sm:w-[30%]">
 								<div class="flex gap-2">
 									{Array.from({ length: reviews[review].rating }).map(() => (
 										<Icon name={'info/star'} />
@@ -159,15 +173,19 @@ import reviews from '../reviews.json'
 		</section>
 		<!-- Online Order Section -->
 		<section class="bg-dark-3 text-light-2">
-			<div class="grid grid-cols-2 items-center gap-8">
-				<Image class="h-full object-cover" src={drink} alt="Caramel Frappe" />
-				<div class="flex flex-col items-start gap-4">
+			<div class="grid items-center gap-8 pt-16 md:grid-cols-2 md:pt-0">
+				<Image
+					class="row-start-2 h-full object-contain object-bottom md:row-start-auto"
+					src={drink}
+					alt="Caramel Frappe"
+				/>
+				<div class="row-start-1 flex flex-col items-start gap-4 p-page-mobile md:row-start-auto">
 					<h2 class="text-5xl font-semibold leading-tight">
 						Tus bebidas favoritas.
 						<br />
 						 En todos lados.
 					</h2>
-					<p class="text-balance text-xl font-light leading-loose">
+					<p class="pr-8 text-xl font-light leading-loose md:text-balance">
 						Puedes encontrar nuestro menú completo de Wraps y Bebidas en <b class="font-medium"
 							>Rappi</b
 						> y <b class="font-medium">Uber Eats</b>.
@@ -178,16 +196,16 @@ import reviews from '../reviews.json'
 		</section>
 		<!-- FAQs Section -->
 		<section class="px-page-mobile py-32 md:px-page-tablet lg:px-page">
-			<div class="grid grid-cols-6 items-start">
-				<div class="col-span-2 flex flex-col items-start gap-4">
-					<h2 class="text-3xl font-semibold leading-tight">Preguntas Frecuentes</h2>
-					<p class="text-balance text-xl font-light leading-loose">
+			<div class="grid items-start gap-12 md:grid-cols-6">
+				<div class="flex flex-col items-start gap-4 md:col-span-2">
+					<h2 class="text-2xl font-semibold leading-tight md:text-3xl">Preguntas Frecuentes</h2>
+					<p class="text-lg font-light leading-loose md:text-balance md:text-xl">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
 						elementum tristique.
 					</p>
 					<Button text="Ver Menú" href="/menu/wraps/" />
 				</div>
-				<div class="col-span-4 border-b border-dark-1">
+				<div class="border-b border-dark-1 md:col-span-4">
 					<FAQ
 						client:load
 						question="Por qué utilizan pan en sus Wraps de la casa?"
