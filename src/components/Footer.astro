@@ -8,6 +8,7 @@ import bgWrap from '../assets/navbar/bg-wrap.svg'
 ---
 
 <footer
+	id="contacto"
 	class="relative overflow-clip rounded-t-[3rem] bg-dark-2 px-page-mobile py-24 text-light-1 md:px-page-tablet md:py-12 lg:px-page"
 >
 	<div class="absolute inset-0 z-0 flex items-center justify-center opacity-[2%]">
@@ -24,7 +25,7 @@ import bgWrap from '../assets/navbar/bg-wrap.svg'
 				<ul class="flex flex-col gap-4">
 					<li><Navlinks href="/" text="Inicio" /></li>
 					<li><Navlinks href="/menu/wraps/" text="Menú" /></li>
-					<li><Navlinks href="/contacto/" text="Contacto" /></li>
+					<li><Navlinks href="#contacto" text="Contacto" /></li>
 				</ul>
 				<ul class="class= flex flex-col gap-4 font-light">
 					<li>
@@ -75,3 +76,10 @@ import bgWrap from '../assets/navbar/bg-wrap.svg'
 		</div>
 	</div>
 </footer>
+
+<style>
+	.main-link:hover svg {
+		tranform: translateY(-2px);
+		transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+</style>
