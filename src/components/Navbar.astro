@@ -9,6 +9,8 @@ import andCoffee from '../assets/navbar/and-coffee.svg'
 import menuOpen from '../assets/navbar/menu-open.png'
 ---
 
+<!-- GSAP animation script -->
+<script src="../menuOpenAnimation.js"></script>
 <script>
 	document.addEventListener('astro:page-load', () => {
 		const links = document.querySelectorAll('a')
@@ -28,7 +30,10 @@ import menuOpen from '../assets/navbar/menu-open.png'
 	<nav
 		class="relative flex w-full items-center justify-between rounded-full bg-dark-2 px-page-mobile py-2 sm:grid sm:grid-cols-1 sm:py-4 md:px-page-tablet lg:px-page"
 	>
-		<div class="col-span-1 col-start-1 row-start-1 hidden items-center justify-between sm:flex">
+		<div
+			class="col-span-1 col-start-1 row-start-1 hidden items-center justify-between sm:flex"
+			id="nav-menu"
+		>
 			<ul class="hidden items-center gap-3 text-light-1 sm:flex lg:gap-6">
 				<li>
 					<Navlinks href="/" text="Inicio" />
@@ -83,6 +88,14 @@ import menuOpen from '../assets/navbar/menu-open.png'
 				/>
 			</a>
 		</div>
-		<Image src={menuOpen} alt="Menu Open" class="sm:hidden" />
+		<lottie-player
+			class="sm:hidden"
+			id="menu-button"
+			src="https://www.lottielab.com/editor?file=f1e5849e-aff7-47ff-9322-faeaf6ea368d"
+			background="transparent"
+			speed="1"
+			loop
+			controls
+			autoplay></lottie-player>
 	</nav>
 </div>
