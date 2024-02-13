@@ -6,6 +6,7 @@ import Navlinks from './Navlinks.astro'
 // Image Imports
 import logo from '../assets/navbar/logo-horizontal.svg'
 import andCoffee from '../assets/navbar/and-coffee.svg'
+import menuOpen from '../assets/navbar/menu-open.png'
 ---
 
 <script>
@@ -25,55 +26,63 @@ import andCoffee from '../assets/navbar/and-coffee.svg'
 	class="fixed left-0 right-0 top-0 z-50 w-full px-page-mobile pt-4 md:px-page-tablet lg:px-page"
 >
 	<nav
-		class="w-full grid-cols-3 items-center justify-between rounded-full bg-dark-2 px-page-mobile py-2 sm:grid sm:py-4 md:px-page-tablet lg:px-page"
+		class="relative flex w-full items-center justify-between rounded-full bg-dark-2 px-page-mobile py-2 sm:grid sm:grid-cols-1 sm:py-4 md:px-page-tablet lg:px-page"
 	>
-		<ul class="hidden items-center gap-3 text-light-1 sm:flex lg:gap-6">
-			<li>
-				<Navlinks href="/" text="Inicio" />
-			</li>
-			<li>
-				<Navlinks href="/menu/wraps/" text="Menú" />
-			</li>
-			<li>
-				<Navlinks href="#contacto" text="Contacto" />
-			</li>
-		</ul>
-		<a class="relative flex justify-center">
-			<Image src={logo} alt="Company Logo" class={'h-6 sm:h-10'} />
-			<Image
-				src={andCoffee}
-				alt="Company Slogan"
-				class={'absolute sm:-bottom-7 -bottom-4 h-3 sm:h-6 '}
-			/>
-		</a>
-		<ul class="hidden items-center justify-end gap-3 sm:flex lg:gap-6">
-			<li
-				class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
-			>
-				<a
-					href="/"
-					class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
-					><Icon name={'socials/instagram'} /></a
+		<div class="col-span-1 col-start-1 row-start-1 hidden items-center justify-between sm:flex">
+			<ul class="hidden items-center gap-3 text-light-1 sm:flex lg:gap-6">
+				<li>
+					<Navlinks href="/" text="Inicio" />
+				</li>
+				<li>
+					<Navlinks href="/menu/wraps/" text="Menú" />
+				</li>
+				<li>
+					<Navlinks href="#contacto" text="Contacto" />
+				</li>
+			</ul>
+			<ul class="hidden items-center justify-end gap-3 sm:flex lg:gap-6">
+				<li
+					class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
 				>
-			</li>
-			<li
-				class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
-			>
-				<a
-					href="/"
-					class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
-					><Icon name={'socials/facebook'} /></a
+					<a
+						href="/"
+						class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
+						><Icon name={'socials/instagram'} /></a
+					>
+				</li>
+				<li
+					class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
 				>
-			</li>
-			<li
-				class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
-			>
-				<a
-					href="/"
-					class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
-					><Icon name={'socials/tiktok'} /></a
+					<a
+						href="/"
+						class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
+						><Icon name={'socials/facebook'} /></a
+					>
+				</li>
+				<li
+					class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
 				>
-			</li>
-		</ul>
+					<a
+						href="/"
+						class="flex items-center justify-center rounded-full bg-light-1 p-1 opacity-80 hover:opacity-100"
+						><Icon name={'socials/tiktok'} /></a
+					>
+				</li>
+			</ul>
+		</div>
+
+		<div
+			class="pointer-events-none flex items-center sm:col-span-1 sm:col-start-1 sm:row-start-1 sm:justify-center"
+		>
+			<a class="pointer-events-auto relative flex justify-start sm:justify-center" href="/">
+				<Image src={logo} alt="Company Logo" class={'h-6 sm:h-10 w-full'} />
+				<Image
+					src={andCoffee}
+					alt="Company Slogan"
+					class={'absolute sm:-bottom-7 -bottom-4 h-3 sm:h-6 '}
+				/>
+			</a>
+		</div>
+		<Image src={menuOpen} alt="Menu Open" class="sm:hidden" />
 	</nav>
 </div>
