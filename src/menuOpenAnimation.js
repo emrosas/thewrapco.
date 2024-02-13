@@ -4,8 +4,20 @@ const tl = gsap.timeline({ defaults: { duration: 1, ease: 'power1.out' }, paused
 tl.to('#menu-button', { opacity: 0.2 })
 
 document.addEventListener('astro:page-load', () => {
-	document.getElementById('menu-button').addEventListener('click', () => {
-		console.log('clicked')
-		tl.play()
+	let menuOpen = false
+	const menuButton = document.getElementById('menu-button')
+	menuButton.addEventListener('click', () => {
+		if (menuOpen) {
+			tl.reverse()
+			menuButton.setDirection(-1)
+			menuButton.play()
+			menuOpen = false
+		} else {
+			tl.play()
+			menuButton.setDirection(1)
+			menuButton.play()
+			menuOpen = true
+		}
+		// menuButton.play()
 	})
 })
