@@ -7,7 +7,6 @@ import Navlinks from './Navlinks.astro'
 import logo from '../assets/navbar/logo-horizontal.svg'
 import andCoffee from '../assets/navbar/and-coffee.svg'
 import wrapBg from '../assets/navbar/wrap-bg.png'
-import { wrap } from 'gsap'
 ---
 
 <!-- GSAP animation script -->
@@ -87,7 +86,7 @@ import { wrap } from 'gsap'
 		</div>
 
 		<div
-			class="pointer-events-none flex items-center sm:col-span-1 sm:col-start-1 sm:row-start-1 sm:justify-center"
+			class="pointer-events-none flex flex-shrink items-center justify-start sm:col-span-1 sm:col-start-1 sm:row-start-1 sm:justify-center"
 		>
 			<a class="pointer-events-auto relative flex justify-start sm:justify-center" href="/">
 				<Image src={logo} alt="Company Logo" class={'h-6 sm:h-10 w-full'} />

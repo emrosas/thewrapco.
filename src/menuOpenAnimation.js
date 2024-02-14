@@ -11,7 +11,7 @@ document.addEventListener('astro:page-load', () => {
 		top: '0',
 		left: '0',
 		width: '100%',
-		height: '70%',
+		height: '85%',
 		backgroundColor: '#343B2B',
 		borderRadius: '0 0 32px 32px'
 	})
