@@ -6,7 +6,8 @@ import Navlinks from './Navlinks.astro'
 // Image Imports
 import logo from '../assets/navbar/logo-horizontal.svg'
 import andCoffee from '../assets/navbar/and-coffee.svg'
-import menuOpen from '../assets/navbar/menu-open.png'
+import wrapBg from '../assets/navbar/wrap-bg.png'
+import { wrap } from 'gsap'
 ---
 
 <!-- GSAP animation script -->
@@ -28,13 +29,15 @@ import menuOpen from '../assets/navbar/menu-open.png'
 	class="fixed left-0 right-0 top-0 z-50 w-full px-page-mobile pt-4 md:px-page-tablet lg:px-page"
 >
 	<nav
-		class="relative flex w-full items-center justify-between rounded-full bg-dark-2 px-page-mobile py-2 sm:grid sm:grid-cols-1 sm:py-4 md:px-page-tablet lg:px-page"
+		class="relative z-50 flex w-full items-center justify-between rounded-full bg-dark-2 px-page-mobile py-2 sm:grid sm:grid-cols-1 sm:py-4 md:px-page-tablet lg:px-page"
 	>
 		<div
-			class="col-span-1 col-start-1 row-start-1 hidden items-center justify-between sm:flex"
+			class="inset-0 col-span-1 col-start-1 row-start-1 hidden w-full flex-col items-center justify-center pb-4 opacity-100 sm:flex sm:flex-row sm:justify-between sm:pb-0"
 			id="nav-menu"
 		>
-			<ul class="hidden items-center gap-3 text-light-1 sm:flex lg:gap-6">
+			<ul
+				class="flex scale-150 flex-col items-center gap-6 text-light-1 sm:scale-100 sm:flex-row sm:gap-3 lg:gap-6"
+			>
 				<li>
 					<Navlinks href="/" text="Inicio" />
 				</li>
@@ -45,7 +48,9 @@ import menuOpen from '../assets/navbar/menu-open.png'
 					<Navlinks href="#contacto" text="Contacto" />
 				</li>
 			</ul>
-			<ul class="hidden items-center justify-end gap-3 sm:flex lg:gap-6">
+			<ul
+				class="absolute bottom-8 flex scale-125 items-center justify-end gap-6 sm:relative sm:bottom-0 sm:scale-100 sm:gap-3 lg:gap-6"
+			>
 				<li
 					class="rounded-full border-2 border-brand-2 border-opacity-0 p-1 hover:border-opacity-100"
 				>
@@ -74,6 +79,11 @@ import menuOpen from '../assets/navbar/menu-open.png'
 					>
 				</li>
 			</ul>
+			<Image
+				src={wrapBg}
+				alt="The company icon as a subtle hint in the background"
+				class="absolute inset-0 h-full w-full object-cover sm:hidden"
+			/>
 		</div>
 
 		<div
@@ -93,6 +103,7 @@ import menuOpen from '../assets/navbar/menu-open.png'
 			id="menu-button"
 			src="/images/twc-menu-open.json"
 			background="transparent"
-			speed="1"></lottie-player>
+			speed="2.5"></lottie-player>
 	</nav>
+	<div id="menu-overlay" class="fixed inset-0 z-30 hidden bg-black opacity-0"></div>
 </div>
