@@ -86,9 +86,12 @@ import wrapBg from '../assets/navbar/wrap-bg.png'
 		</div>
 
 		<div
-			class="pointer-events-none flex flex-shrink items-center justify-start sm:col-span-1 sm:col-start-1 sm:row-start-1 sm:justify-center"
+			class="pointer-events-none flex flex-shrink items-start justify-start sm:col-span-1 sm:col-start-1 sm:row-start-1 sm:items-center sm:justify-center"
 		>
-			<a class="pointer-events-auto relative flex justify-start sm:justify-center" href="/">
+			<a
+				class="max-w-1/5 pointer-events-auto relative flex flex-shrink justify-start sm:justify-center"
+				href="/"
+			>
 				<Image src={logo} alt="Company Logo" class={'h-6 sm:h-10 w-full'} />
 				<Image
 					src={andCoffee}
